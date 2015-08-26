@@ -16,6 +16,7 @@
 
 
 #import "DraggableView.h"
+#import "SummonerController.h"
 
 @implementation DraggableView {
     CGFloat xFromCenter;
@@ -26,7 +27,13 @@
 @synthesize delegate;
 
 @synthesize panGestureRecognizer;
-@synthesize information;
+@synthesize summonerName;
+@synthesize summonerLeagueIcon;
+@synthesize summonerProfileIcon;
+@synthesize winsLossesLabel;
+@synthesize lossesLabel;
+@synthesize tierDivisionLabel;
+@synthesize leaguePointsLabel;
 @synthesize overlayView;
 
 - (id)initWithFrame:(CGRect)frame
@@ -36,23 +43,217 @@
         [self setupView];
         
 #warning placeholder stuff, replace with card-specific information {
-        information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
-        information.text = @"no info given";
-        [information setTextAlignment:NSTextAlignmentCenter];
-        information.textColor = [UIColor blackColor];
+        summonerName = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 150, 200, 300, 25)];
+        [summonerName setTextAlignment:NSTextAlignmentCenter];
+        summonerName.textColor = [UIColor whiteColor];
         
-        self.backgroundColor = [UIColor whiteColor];
+        summonerLeagueIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - 40, 10, 80, 80)];
+        
+        summonerProfileIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 200, 25, 25)];
+
+        
+         winsLossesLabel = [[UILabel alloc]initWithFrame:CGRectMake(30, 250, 100, 25)];
+        [winsLossesLabel setTextAlignment:NSTextAlignmentCenter];
+        winsLossesLabel.textColor = [UIColor whiteColor];
+        
+         lossesLabel = [[UILabel alloc]initWithFrame:CGRectMake(150, 250, 100, 25)];
+        [lossesLabel setTextAlignment:NSTextAlignmentCenter];
+        lossesLabel.textColor = [UIColor whiteColor];
+        
+         tierDivisionLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 100, 200, 40)];
+        [tierDivisionLabel setTextAlignment:NSTextAlignmentCenter];
+        tierDivisionLabel.textColor = [UIColor whiteColor];
+        
+         leaguePointsLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 150, 200, 40)];
+        [leaguePointsLabel setTextAlignment:NSTextAlignmentCenter];
+        leaguePointsLabel.textColor = [UIColor whiteColor];
+        
+        self.backgroundColor = [UIColor darkGrayColor];
+        
 #warning placeholder stuff, replace with card-specific information }
         
         
+#pragma mark - autolayout
         
+
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
         [self addGestureRecognizer:panGestureRecognizer];
-        [self addSubview:information];
+        
+        //Add all subviews to card.
+        [self addSubview:summonerName];
+        [self addSubview:summonerLeagueIcon];
+        [self addSubview:summonerProfileIcon];
+        [self addSubview:winsLossesLabel];
+        [self addSubview:lossesLabel];
+        [self addSubview:tierDivisionLabel];
+        [self addSubview:leaguePointsLabel];
+//
+//        [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [summonerLeagueIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [tierDivisionLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [summonerName setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [summonerProfileIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
+//
+//
+//        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:summonerLeagueIcon
+//                                                                      attribute:NSLayoutAttributeLeading
+//                                                                      relatedBy:NSLayoutRelationEqual
+//                                                                         toItem:self
+//                                                                      attribute:NSLayoutAttributeLeading
+//                                                                     multiplier:1
+//                                                                       constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerLeagueIcon
+//                                                  attribute:NSLayoutAttributeTop
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:self
+//                                                  attribute:NSLayoutAttributeTop
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerLeagueIcon
+//                                                  attribute:NSLayoutAttributeTrailing
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:self
+//                                                  attribute:NSLayoutAttributeTrailing
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+        
+//       NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
+//                                                                      attribute:NSLayoutAttributeLeading
+//                                                                      relatedBy:NSLayoutRelationEqual
+//                                                                         toItem:self
+//                                                                      attribute:NSLayoutAttributeLeading
+//                                                                     multiplier:1
+//                                                                       constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
+//                                                  attribute:NSLayoutAttributeTop
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:summonerLeagueIcon
+//                                                  attribute:NSLayoutAttributeTop
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
+//                                                  attribute:NSLayoutAttributeTrailing
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:self
+//                                                  attribute:NSLayoutAttributeTrailing
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
+//                                                  attribute:NSLayoutAttributeBottom
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:summonerName
+//                                                  attribute:NSLayoutAttributeTop
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
+//                                                  attribute:NSLayoutAttributeLeading
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeTrailing
+//                                                 multiplier:1
+//                                                   constant:5];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
+//                                                  attribute:NSLayoutAttributeTop
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:tierDivisionLabel
+//                                                  attribute:NSLayoutAttributeBottom
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
+//                                                  attribute:NSLayoutAttributeTrailing
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:self
+//                                                  attribute:NSLayoutAttributeTrailing
+//                                                 multiplier:1
+//                                                   constant:10];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
+//                                                  attribute:NSLayoutAttributeBottom
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:self
+//                                                  attribute:NSLayoutAttributeBottom
+//                                                 multiplier:1
+//                                                   constant:-10];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeLeading
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:self
+//                                                  attribute:NSLayoutAttributeLeading
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeTop
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:tierDivisionLabel
+//                                                  attribute:NSLayoutAttributeBottom
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeCenterY
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:summonerName
+//                                                  attribute:NSLayoutAttributeCenterY
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeBottom
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:self
+//                                                  attribute:NSLayoutAttributeBottom
+//                                                 multiplier:1
+//                                                   constant:-10];
+//        [self addConstraint:constraint];
+//
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeWidth
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeHeight
+//                                                 multiplier:1
+//                                                   constant:50];
+//        [self addConstraint:constraint];
+//        
+//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
+//                                                  attribute:NSLayoutAttributeHeight
+//                                                  relatedBy:NSLayoutRelationEqual
+//                                                     toItem:summonerName
+//                                                  attribute:NSLayoutAttributeHeight
+//                                                 multiplier:1
+//                                                   constant:0];
+//        [self addConstraint:constraint];
+//        
+//
         
         overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
         overlayView.alpha = 0;
+    //    [self addSubview:self.information];
         [self addSubview:overlayView];
     }
     return self;
@@ -65,7 +266,7 @@
     self.layer.shadowOpacity = 0.2;
     self.layer.shadowOffset = CGSizeMake(1, 1);
 }
-
+//
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

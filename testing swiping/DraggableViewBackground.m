@@ -6,7 +6,16 @@
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
 //
 
+#import "DragCardsViewController.h"
 #import "DraggableViewBackground.h"
+#import "Summoner.h"
+#import "SummonerController.h"
+
+@interface DraggableViewBackground ()
+
+@property (strong, nonatomic) Summoner* test;
+
+@end
 
 @implementation DraggableViewBackground{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
@@ -23,7 +32,7 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 static const float CARD_HEIGHT = 386; //%%% height of the draggable card
 static const float CARD_WIDTH = 290; //%%% width of the draggable card
 
-@synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
+@synthesize summonerCards; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
 
 - (id)initWithFrame:(CGRect)frame
@@ -31,12 +40,39 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     self = [super initWithFrame:frame];
     if (self) {
         [super layoutSubviews];
-        [self setupView];
-        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
-        loadedCards = [[NSMutableArray alloc] init];
-        allCards = [[NSMutableArray alloc] init];
-        cardsLoadedIndex = 0;
-        [self loadCards];
+    
+        
+        //@property (strong, nonatomic) Summoner *summoner;
+        //If self exists create a summoner in model object context
+        if (self.test) {
+            [self.test setSummonerWithName:@"GodMechanix" completion:^{
+                
+            }];
+                    } else {
+                        self.test = [[SummonerController sharedInstance] createSummoner];
+                        [self.test setSummonerWithName:@"GodMechanix" completion:nil];        }
+
+        [[SummonerController sharedInstance] save];
+        
+            NSLog(@"%@", self.test.summonerID);
+//            NSLog(@"%@", test.summonerLevel);
+//            NSLog(@"%@", test.summonerName);
+//            NSLog(@"%@", test.revisionDate);
+//            NSLog(@"%@", test.profileIconID);
+//            NSLog(@"%@", test.rankedTier);
+//            NSLog(@"%@", test.rankedDivision);
+//            NSLog(@"%@", test.summonerLevel	);
+//            NSLog(@"%@", test.rankedWins);
+//            NSLog(@"%@", test.rankedLosses);
+       
+            [self setupView];
+            summonerCards = [[NSArray alloc]initWithObjects: [SummonerController sharedInstance].summoner,  nil]; //%%% placeholder for card-specific information
+            loadedCards = [[NSMutableArray alloc] init];
+            allCards = [[NSMutableArray alloc] init];
+            cardsLoadedIndex = 0;
+            [self loadCards];
+        
+  
     }
     return self;
 }
@@ -44,8 +80,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
-#warning customize all of this.  These are just place holders to make it look pretty
-    self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1]; //the gray background colors
+//#warning customize all of this.  These are just place holders to make it look pretty
+    self.backgroundColor = [UIColor lightGrayColor]; //the gray background colors
     menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
     [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
     messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
@@ -60,16 +96,32 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [self addSubview:messageButton];
     [self addSubview:xButton];
     [self addSubview:checkButton];
+    [messageButton addTarget:[DragCardsViewController new] action:@selector(messageButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [menuButton addTarget:[DragCardsViewController new] action:@selector(menuButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 }
 
-#warning include own card customization here!
+//#warning include own card customization here!
 //%%% creates a card and returns it.  This should be customized to fit your needs.
 // use "index" to indicate where the information should be pulled.  If this doesn't apply to you, feel free
 // to get rid of it (eg: if you are building cards from data from the internet)
 -(DraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
-    draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
+    
+    Summoner *newSummoner = [summonerCards objectAtIndex:index];
+    draggableView.summonerName.text = newSummoner.summonerName; //%%% placeholder for card-specific information
+    draggableView.winsLossesLabel.text = [NSString stringWithFormat:@"W: %@", newSummoner.rankedWins];
+    draggableView.lossesLabel.text = [NSString stringWithFormat:@"L: %@", newSummoner.rankedLosses];
+    draggableView.tierDivisionLabel.text = [NSString stringWithFormat:@"%@ %@", newSummoner.rankedTier, newSummoner.rankedDivision];
+    draggableView.leaguePointsLabel.text = [NSString stringWithFormat:@"%@ LP", newSummoner.leaguePoints];
+    
+    
+    draggableView.summonerLeagueIcon.image = [UIImage imageNamed:[newSummoner leagueSpecificImageNameForSummoner]];
+    
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/%ld.png", (long)[newSummoner.profileIconID integerValue]]]];
+    
+    draggableView.summonerProfileIcon.image = [UIImage imageWithData:imageData];
+    
     draggableView.delegate = self;
     return draggableView;
 }
@@ -77,12 +129,12 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards
 {
-    if([exampleCardLabels count] > 0) {
-        NSInteger numLoadedCardsCap =(([exampleCardLabels count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardLabels count]);
+    if([summonerCards count] > 0) {
+        NSInteger numLoadedCardsCap =(([summonerCards count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[summonerCards count]);
         //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
         
         //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
-        for (int i = 0; i<[exampleCardLabels count]; i++) {
+        for (int i = 0; i<[summonerCards count]; i++) {
             DraggableView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
             
@@ -162,6 +214,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [dragView leftClickAction];
 }
 
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -170,5 +223,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     // Drawing code
 }
 */
+
 
 @end

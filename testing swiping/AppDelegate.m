@@ -7,11 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "DragCardsViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor darkGrayColor];
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
+    
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }

@@ -48,7 +48,17 @@
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic)CGPoint originalPoint;
 @property (nonatomic,strong)OverlayView* overlayView;
-@property (nonatomic,strong)UILabel* information; //%%% a placeholder for any card-specific information
+
+//Summoner Info on each card
+@property (nonatomic, strong)UILabel* summonerName;
+@property (nonatomic, strong)UIImageView* summonerLeagueIcon;
+@property (nonatomic, strong)UIImageView* summonerProfileIcon;
+@property (nonatomic, strong)UILabel* winsLossesLabel;
+@property (nonatomic, strong)UILabel* lossesLabel;
+@property (nonatomic, strong)UILabel* tierDivisionLabel;
+@property (nonatomic, strong)UILabel* leaguePointsLabel;
+
+
 
 -(void)leftClickAction;
 -(void)rightClickAction;

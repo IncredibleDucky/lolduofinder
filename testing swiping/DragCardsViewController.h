@@ -33,5 +33,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface DragCardsViewController : UIViewController
+-(void)messageButtonPressed;
+
+
+-(void)menuButtonPressed;
+
+
 @end
