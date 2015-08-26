@@ -41,36 +41,24 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     if (self) {
         [super layoutSubviews];
     
+        __weak typeof(self) weakSelf = self;
         
         //@property (strong, nonatomic) Summoner *summoner;
         //If self exists create a summoner in model object context
         if (self.test) {
             [self.test setSummonerWithName:@"GodMechanix" completion:^{
-                
-            }];
-                    } else {
-                        self.test = [[SummonerController sharedInstance] createSummoner];
-                        [self.test setSummonerWithName:@"GodMechanix" completion:nil];        }
+                [weakSelf postDataRequestSetup];
+   }];
+        } else {
+                    self.test = [[SummonerController sharedInstance] createSummoner];
+                    [self.test setSummonerWithName:@"GodMechanix" completion:^{
+                        [weakSelf postDataRequestSetup];
+                    }];
+        }
 
         [[SummonerController sharedInstance] save];
         
-            NSLog(@"%@", self.test.summonerID);
-//            NSLog(@"%@", test.summonerLevel);
-//            NSLog(@"%@", test.summonerName);
-//            NSLog(@"%@", test.revisionDate);
-//            NSLog(@"%@", test.profileIconID);
-//            NSLog(@"%@", test.rankedTier);
-//            NSLog(@"%@", test.rankedDivision);
-//            NSLog(@"%@", test.summonerLevel	);
-//            NSLog(@"%@", test.rankedWins);
-//            NSLog(@"%@", test.rankedLosses);
-       
-            [self setupView];
-            summonerCards = [[NSArray alloc]initWithObjects: [SummonerController sharedInstance].summoner,  nil]; //%%% placeholder for card-specific information
-            loadedCards = [[NSMutableArray alloc] init];
-            allCards = [[NSMutableArray alloc] init];
-            cardsLoadedIndex = 0;
-            [self loadCards];
+
         
   
     }
@@ -214,6 +202,16 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [dragView leftClickAction];
 }
 
+
+- (void)postDataRequestSetup {
+    NSLog(@"%@", self.test.summonerID);
+    [self setupView];
+    summonerCards = [[NSArray alloc]initWithObjects: self.test,  nil]; //%%% placeholder for card-specific information
+    loadedCards = [[NSMutableArray alloc] init];
+    allCards = [[NSMutableArray alloc] init];
+    cardsLoadedIndex = 0;
+    [self loadCards];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

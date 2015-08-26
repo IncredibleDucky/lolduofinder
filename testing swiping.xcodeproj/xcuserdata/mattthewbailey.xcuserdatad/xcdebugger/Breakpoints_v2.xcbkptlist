@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Summoner.m"
-            timestampString = "462273010.823887"
+            filePath = "testing swiping/DraggableViewBackground.m"
+            timestampString = "462290668.048682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-initRankedDataWithDictionary:"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "-postDataRequestSetup"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Summoner.m"
-            timestampString = "462273010.823887"
+            filePath = "testing swiping/DraggableViewBackground.m"
+            timestampString = "462290694.837559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-setSummonerInfoWithDictionary:completion:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-initWithFrame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,44 +41,124 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Summoner.m"
-            timestampString = "462273010.823887"
+            filePath = "testing swiping/DraggableViewBackground.m"
+            timestampString = "462290700.650013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-setSummonerWithName:completion:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-initWithFrame:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testing swiping/DraggableViewBackground.m"
+            timestampString = "462290731.589346"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-initWithFrame:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[Summoner setSummonerWithName:completion:]"
+                  symbolName = "-[DraggableViewBackground initWithFrame:]"
                   moduleName = "testing swiping"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mattthewbailey/Desktop/TinderSimpleSwipeCards/Summoner.m"
-                  timestampString = "462278414.542759"
+                  urlString = "file:///Users/mattthewbailey/Desktop/TinderSimpleSwipeCards/testing%20swiping/DraggableViewBackground.m"
+                  timestampString = "462298421.523068"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "246">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "279">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__43-[Summoner setSummonerWithName:completion:]_block_invoke"
+                  symbolName = "__41-[DraggableViewBackground initWithFrame:]_block_invoke"
                   moduleName = "testing swiping"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mattthewbailey/Desktop/TinderSimpleSwipeCards/Summoner.m"
-                  timestampString = "462278414.543118"
+                  urlString = "file:///Users/mattthewbailey/Desktop/TinderSimpleSwipeCards/testing%20swiping/DraggableViewBackground.m"
+                  timestampString = "462298421.523552"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "105">
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testing swiping/DraggableViewBackground.m"
+            timestampString = "462290733.882731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-initWithFrame:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testing swiping/DraggableViewBackground.m"
+            timestampString = "462290735.765982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-initWithFrame:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DraggableViewBackground initWithFrame:]"
+                  moduleName = "testing swiping"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattthewbailey/Desktop/TinderSimpleSwipeCards/testing%20swiping/DraggableViewBackground.m"
+                  timestampString = "462298421.526796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "806">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[DraggableViewBackground initWithFrame:]_block_invoke16"
+                  moduleName = "testing swiping"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattthewbailey/Desktop/TinderSimpleSwipeCards/testing%20swiping/DraggableViewBackground.m"
+                  timestampString = "462298421.527033"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -90,28 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summoner.m"
-            timestampString = "462273128.009892"
+            timestampString = "462290901.865011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-setSummonerWithName:completion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "testing swiping/DraggableViewBackground.m"
-            timestampString = "462278252.454052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-setRankedDataWithDictionary:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +186,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summoner.m"
-            timestampString = "462274561.483269"
+            timestampString = "462290957.671584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-URLSession:dataTask:didReceiveData:"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-setRankedDataWithDictionary:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Summoner.m"
+            timestampString = "462290979.807318"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-setRankedDataWithDictionary:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

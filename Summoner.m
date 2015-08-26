@@ -10,8 +10,7 @@
 #import "SummonerController.h"
 #import "NetworkController.h"
 
-@interface Summoner () <NSURLSessionDataDelegate>
-
+@interface Summoner ()
 @end
 
 @implementation Summoner
@@ -28,38 +27,43 @@
 @dynamic rankedLosses;
 @dynamic hasHotStreak;
 
-- (void)setSummonerWithName:(NSString *)summonerName completion:(void(^)(void))completion{
-
+- (void)setSummonerWithName:(NSString *)summonerName completion:(void (^)(void))completion {
+    
     NSURLSession *session = [NSURLSession sharedSession];
     
-        NSLog(@"%@", session);
-
+    NSURL *path = [[NSURL alloc] initWithString:@"https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/GodMechanix?api_key=77169713-d987-4b15-a5d9-4bde08f92c20"];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:path completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            completion();
+        }
+        else {
+            NSLog(@"%@", data);
+            
+            NSError *serializationError;
+            NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&serializationError];
+            
+            NSLog(@"%@", responseDictionary);
+            
+            NSString *summonerNameKey = [summonerName lowercaseString];
+            summonerNameKey = [summonerNameKey stringByReplacingOccurrencesOfString:@" " withString:@""];
+            [self setSummonerInfoWithDictionary:responseDictionary[summonerNameKey] completion:^{
+                   completion();
+            }];
+        }
         
-        NSURL *path = [NSURL URLWithString:[NetworkController getSummonderURLWithSummName:summonerName]];
-        
-        NSURLSessionDataTask *dataTask = [session dataTaskWithURL:path completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//            if (error) {
-//                NSLog(@"%@", error.localizedDescription);
-//            }
-//            else {
-                NSLog(@"%@", data);
-                
-//                NSError *serializationError;
-//                NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&serializationError];
-//                
-//                NSLog(@"%@", responseDictionary);
-//                
-//                completion();
-//            }
-        }];
-        
-        [dataTask resume];
+      
+    }];
+    
+    
+    [dataTask resume];
+    
+    
 }
 
 - (void)setSummonerInfoWithDictionary:(NSDictionary *)dictionary completion:(void (^)(void))completion {
     
-    
-    if(self) {
         
         if(dictionary[@"id"]) {
             self.summonerID = dictionary[@"id"];
@@ -71,20 +75,20 @@
             self.profileIconID = dictionary[@"profileIconId"];
         }
         if(dictionary[@"revisionDate"]) {
-            self.revisionDate = (NSDate *)dictionary[@"revisionDate"];
+            self.revisionDate = [NSDate dateWithTimeIntervalSince1970:[dictionary[@"revisionDate"] doubleValue]];
         }
         if(dictionary[@"summonerLevel"]) {
             self.summonerLevel = dictionary[@"summonerLevel"];
         }
         if(dictionary[@"id"]) {
-
+            
             
             NSURLSession *session = [NSURLSession sharedSession];
             
             NSURL *path = [NSURL URLWithString:[NetworkController getLeagueInfoForSummonerURLWithSummoner:self]];
             
             NSURLSessionDataTask *dataTask = [session dataTaskWithURL:path completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
+                
                 if (error) {
                     NSLog(@"%@", error.localizedDescription);
                 }
@@ -93,23 +97,23 @@
                     
                     NSError *serializationError;
                     NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&serializationError];
+                 
+                   // NSLog(@"%@", responseDictionary);
                     
-                    //  NSLog(@"%@", responseDictionary);
-                    
-                  [self setRankedDataWithDictionary:responseDictionary[self.summonerID][0]];
+                    [self setRankedDataWithDictionary:responseDictionary[[NSString stringWithFormat:@"%@", self.summonerID]][0]];
                     
                 }
-          
+                completion();
             }];
             [dataTask resume];
-   
+            
         }
-    }
-
+    
 }
 
 - (void)setRankedDataWithDictionary:(NSDictionary *)dictionary {
     
+    NSLog(@"%@", dictionary);
     if(dictionary[@"tier"]) {
         self.rankedTier = dictionary[@"tier"];
     }
@@ -143,8 +147,9 @@
     if(leagueData[@"losses"]) {
         self.rankedLosses = leagueData[@"losses"];
     }
-
+    
 }
+
 
 -(NSString *)leagueSpecificImageNameForSummoner{
     
@@ -165,8 +170,5 @@
     
 }
 
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
-    NSLog(@"data");
-}
 
 @end

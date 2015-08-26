@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSNumber * rankedLosses;
 @property (nonatomic, retain) NSNumber * hasHotStreak;
 
-- (void)setSummonerWithName:(NSString *)summonerName completion:(void(^)(void))completion;
+- (void)setSummonerWithName:(NSString *)summonerName completion:(void (^)(void))completion;
 
 - (NSString *)leagueSpecificImageNameForSummoner;
 
