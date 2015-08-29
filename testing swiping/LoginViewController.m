@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "DragCardsViewController.h"
 #import "RegisterViewController.h"
+#import "AppearanceController.h"
+#import "LOLLabel.h"
 
 @interface LoginViewController ()
 
@@ -23,18 +25,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [AppearanceController initializeAppearanceDefaults];
+
     
     self.loginButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 64, 100, 100)];
     self.registerButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 64, 100, 100)];
     
-    UILabel *loginLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    UILabel *registerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    LOLLabel *loginLabel = [[LOLLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    LOLLabel *registerLabel = [[LOLLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     
     loginLabel.text = @"Login";
+    loginLabel.font = [UIFont fontWithName:@"FrizQuadrataFont" size:20];
     registerLabel.text = @"Register";
     
-    self.loginButton.titleLabel.text = @"Login";
-    self.registerButton.titleLabel.text = @"Register";
+//    self.loginButton.titleLabel.text = @"Login";
+//    self.registerButton.titleLabel.text = @"Register";
 
     self.loginButton.titleLabel.textColor = [UIColor blackColor];
 

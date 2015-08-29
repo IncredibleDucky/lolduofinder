@@ -16,6 +16,7 @@
 + (NSString *)getSummonerURLWithSummID:(NSString *)summID;
 + (NSString *)getSummonderURLWithSummName:(NSString *)summName;
 + (NSString *)getLeagueInfoForSummonerURLWithSummoner:(Summoner *)summoner;
++ (NSString *)getMasteriesForSummonerURLWithSummoner:(Summoner *)summoner;
 
 
 

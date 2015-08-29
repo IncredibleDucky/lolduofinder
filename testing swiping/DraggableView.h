@@ -33,6 +33,9 @@
 
 #import <UIKit/UIKit.h>
 #import "OverlayView.h"
+#import "Summoner.h"
+#import "AppearanceController.h"
+#import "LOLLabel.h"
 
 @protocol DraggableViewDelegate <NSObject>
 
@@ -50,15 +53,15 @@
 @property (nonatomic,strong)OverlayView* overlayView;
 
 //Summoner Info on each card
-@property (nonatomic, strong)UILabel* summonerName;
+@property (nonatomic, strong)LOLLabel* summonerName;
 @property (nonatomic, strong)UIImageView* summonerLeagueIcon;
 @property (nonatomic, strong)UIImageView* summonerProfileIcon;
-@property (nonatomic, strong)UILabel* winsLossesLabel;
-@property (nonatomic, strong)UILabel* lossesLabel;
-@property (nonatomic, strong)UILabel* tierDivisionLabel;
-@property (nonatomic, strong)UILabel* leaguePointsLabel;
+@property (nonatomic, strong)LOLLabel* winsLossesLabel;
+@property (nonatomic, strong)LOLLabel* lossesLabel;
+@property (nonatomic, strong)LOLLabel* tierDivisionLabel;
+@property (nonatomic, strong)LOLLabel* leaguePointsLabel;
 
-
+-(void)fillCardWithSummonerInfo:(Summoner *)summoner;
 
 -(void)leftClickAction;
 -(void)rightClickAction;

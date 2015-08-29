@@ -8,8 +8,17 @@
 
 #import "SummonerController.h"
 #import "Summoner.h"
-#import "Stack.h"
+
 #import "NetworkController.h"
+
+@interface SummonerController ()
+
+@property (strong, nonatomic, readwrite) NSMutableArray *leftSwipes;
+@property (strong, nonatomic, readwrite) NSMutableArray *rightSwipes;
+@property (strong, nonatomic, readwrite) NSMutableArray *matches;
+
+@end
+
 
 @implementation SummonerController
 
@@ -25,45 +34,14 @@
 
 #pragma mark - Create
 
-- (Summoner *)createSummoner{
-   
-    Summoner *summoner = [NSEntityDescription insertNewObjectForEntityForName:@"Summoner" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
-    
-    
-    return summoner;
-}
 
 #pragma mark - Retrieve
 
-- (Summoner *)summoner {
-    //Create request for model Data from CoreData Managed Object Context
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Summoner"];
-    
-    //Create error for fetch request error tracking.
-    NSError *error;
-    
-    //Execute the fetch request and place it it in returnable instance of summoner.
-    Summoner *summoner = [[Stack sharedInstance].managedObjectContext executeFetchRequest:request error:&error][0];
-    
-    if (error) {
-        NSLog(@"Error fetching summoner: %@", error.localizedDescription);
-    }
-    
-    return summoner;
-    
-}
 
 #pragma mark - Update
 
-//Saves managed object context to persistentStore
-- (void)save {
-    [[Stack sharedInstance].managedObjectContext save:nil];
-}
 
 #pragma mark - Delete
 
-- (void)removeEntry:(Summoner *)summonerToBeDeleted {
-    [summonerToBeDeleted.managedObjectContext delete:summonerToBeDeleted];
-}
 
 @end

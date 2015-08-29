@@ -43,7 +43,7 @@
         [self setupView];
         
 #warning placeholder stuff, replace with card-specific information {
-        summonerName = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 150, 200, 300, 25)];
+        summonerName = [[LOLLabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 150, 200, 300, 25)];
         [summonerName setTextAlignment:NSTextAlignmentCenter];
         summonerName.textColor = [UIColor whiteColor];
         
@@ -52,19 +52,19 @@
         summonerProfileIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 200, 25, 25)];
 
         
-         winsLossesLabel = [[UILabel alloc]initWithFrame:CGRectMake(30, 250, 100, 25)];
+         winsLossesLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(30, 250, 100, 25)];
         [winsLossesLabel setTextAlignment:NSTextAlignmentCenter];
         winsLossesLabel.textColor = [UIColor whiteColor];
         
-         lossesLabel = [[UILabel alloc]initWithFrame:CGRectMake(150, 250, 100, 25)];
+         lossesLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(150, 250, 100, 25)];
         [lossesLabel setTextAlignment:NSTextAlignmentCenter];
         lossesLabel.textColor = [UIColor whiteColor];
         
-         tierDivisionLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 100, 200, 40)];
+         tierDivisionLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 100, 200, 40)];
         [tierDivisionLabel setTextAlignment:NSTextAlignmentCenter];
         tierDivisionLabel.textColor = [UIColor whiteColor];
         
-         leaguePointsLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 150, 200, 40)];
+         leaguePointsLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 150, 200, 40)];
         [leaguePointsLabel setTextAlignment:NSTextAlignmentCenter];
         leaguePointsLabel.textColor = [UIColor whiteColor];
         
@@ -419,6 +419,23 @@
     [delegate cardSwipedLeft:self];
     
     NSLog(@"NO");
+}
+
+-(void)fillCardWithSummonerInfo:(Summoner *)summoner {
+    
+    self.summonerName.text = summoner.summonerName; //%%% placeholder for card-specific information
+    self.winsLossesLabel.text = [NSString stringWithFormat:@"W: %@", summoner.rankedWins];
+    self.lossesLabel.text = [NSString stringWithFormat:@"L: %@", summoner.rankedLosses];
+    self.tierDivisionLabel.text = [NSString stringWithFormat:@"%@ %@", summoner.rankedTier, summoner.rankedDivision];
+    self.leaguePointsLabel.text = [NSString stringWithFormat:@"%@ LP", summoner.leaguePoints];
+    
+    
+    self.summonerLeagueIcon.image = [UIImage imageNamed:[summoner leagueSpecificImageNameForSummoner]];
+    
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/%ld.png", (long)[summoner.profileIconID integerValue]]]];
+    
+    self.summonerProfileIcon.image = [UIImage imageWithData:imageData];
+    
 }
 
 

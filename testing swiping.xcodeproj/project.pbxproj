@@ -13,9 +13,13 @@
 		93B15ED11B8DCB4900B75784 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ED01B8DCB4900B75784 /* MessagesViewController.m */; };
 		93B15ED41B8DCB6400B75784 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ED31B8DCB6400B75784 /* MenuViewController.m */; };
 		93BCB41E1B7E4EA3000D6630 /* SummonerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BCB41D1B7E4EA3000D6630 /* SummonerController.m */; };
-		93FD491A1B8D20B70047BAA4 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FD49191B8D20B70047BAA4 /* Stack.m */; };
+		93CAC24C1B8F76130028482E /* VerifyRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC24B1B8F76130028482E /* VerifyRegistrationViewController.m */; };
+		93CAC24F1B8F9D800028482E /* FixedSummonerProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC24E1B8F9D800028482E /* FixedSummonerProfileView.m */; };
+		93CAC2521B8FA3EE0028482E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC2511B8FA3EE0028482E /* WelcomeViewController.m */; };
+		93CAC2541B8FBACE0028482E /* Friz Quadrata Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93CAC2531B8FB9F50028482E /* Friz Quadrata Regular.ttf */; };
+		93CAC2571B8FC6450028482E /* AppearanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC2561B8FC6450028482E /* AppearanceController.m */; };
+		93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC2591B8FE97F0028482E /* LOLLabel.m */; };
 		93FD491C1B8D24F50047BAA4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FD491B1B8D24F50047BAA4 /* CoreData.framework */; };
-		93FD491F1B8D254D0047BAA4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93FD491D1B8D254D0047BAA4 /* Model.xcdatamodeld */; };
 		93FD49221B8D28780047BAA4 /* Summoner.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FD49211B8D28780047BAA4 /* Summoner.m */; };
 		99B7AE99192D50D500C1B49C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B7AE98192D50D500C1B49C /* Foundation.framework */; };
 		99B7AE9B192D50D500C1B49C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B7AE9A192D50D500C1B49C /* CoreGraphics.framework */; };
@@ -59,10 +63,18 @@
 		93B15ED31B8DCB6400B75784 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ../MenuViewController.m; sourceTree = "<group>"; };
 		93BCB41C1B7E4EA3000D6630 /* SummonerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonerController.h; sourceTree = "<group>"; };
 		93BCB41D1B7E4EA3000D6630 /* SummonerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummonerController.m; sourceTree = "<group>"; };
-		93FD49181B8D20B70047BAA4 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
-		93FD49191B8D20B70047BAA4 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		93CAC24A1B8F76130028482E /* VerifyRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerifyRegistrationViewController.h; path = ../VerifyRegistrationViewController.h; sourceTree = "<group>"; };
+		93CAC24B1B8F76130028482E /* VerifyRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerifyRegistrationViewController.m; path = ../VerifyRegistrationViewController.m; sourceTree = "<group>"; };
+		93CAC24D1B8F9D800028482E /* FixedSummonerProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixedSummonerProfileView.h; sourceTree = "<group>"; };
+		93CAC24E1B8F9D800028482E /* FixedSummonerProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixedSummonerProfileView.m; sourceTree = "<group>"; };
+		93CAC2501B8FA3EE0028482E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		93CAC2511B8FA3EE0028482E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		93CAC2531B8FB9F50028482E /* Friz Quadrata Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Friz Quadrata Regular.ttf"; sourceTree = "<group>"; };
+		93CAC2551B8FC6450028482E /* AppearanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceController.h; sourceTree = "<group>"; };
+		93CAC2561B8FC6450028482E /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceController.m; sourceTree = "<group>"; };
+		93CAC2581B8FE97F0028482E /* LOLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLLabel.h; sourceTree = "<group>"; };
+		93CAC2591B8FE97F0028482E /* LOLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLLabel.m; sourceTree = "<group>"; };
 		93FD491B1B8D24F50047BAA4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		93FD491E1B8D254D0047BAA4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		93FD49201B8D28780047BAA4 /* Summoner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Summoner.h; path = ../Summoner.h; sourceTree = "<group>"; };
 		93FD49211B8D28780047BAA4 /* Summoner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Summoner.m; path = ../Summoner.m; sourceTree = "<group>"; };
 		99B7AE95192D50D500C1B49C /* testing swiping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testing swiping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,12 +129,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9385CDD71B91220900C1F79A /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				93CAC2581B8FE97F0028482E /* LOLLabel.h */,
+				93CAC2591B8FE97F0028482E /* LOLLabel.m */,
+				93CAC2551B8FC6450028482E /* AppearanceController.h */,
+				93CAC2561B8FC6450028482E /* AppearanceController.m */,
+			);
+			name = Appearance;
+			sourceTree = "<group>";
+		};
 		93C2A0381B8D718400AD0ADF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				93FD491D1B8D254D0047BAA4 /* Model.xcdatamodeld */,
-				93FD49181B8D20B70047BAA4 /* Stack.h */,
-				93FD49191B8D20B70047BAA4 /* Stack.m */,
 				93FD49201B8D28780047BAA4 /* Summoner.h */,
 				93FD49211B8D28780047BAA4 /* Summoner.m */,
 			);
@@ -138,6 +158,8 @@
 				99FDDE7819A992F200371454 /* DraggableViewBackground.m */,
 				99B7AECD192D513800C1B49C /* DraggableView.h */,
 				99B7AECE192D513800C1B49C /* DraggableView.m */,
+				93CAC24D1B8F9D800028482E /* FixedSummonerProfileView.h */,
+				93CAC24E1B8F9D800028482E /* FixedSummonerProfileView.m */,
 				99B7AED0192E914500C1B49C /* OverlayView.h */,
 				99B7AED1192E914500C1B49C /* OverlayView.m */,
 			);
@@ -191,6 +213,8 @@
 			children = (
 				99B7AEA7192D50D500C1B49C /* AppDelegate.h */,
 				99B7AEA8192D50D500C1B49C /* AppDelegate.m */,
+				93CAC2501B8FA3EE0028482E /* WelcomeViewController.h */,
+				93CAC2511B8FA3EE0028482E /* WelcomeViewController.m */,
 				99B7AEAA192D50D500C1B49C /* Main.storyboard */,
 				936AAAD51B8DC10F00435669 /* LoginViewController.h */,
 				936AAAD61B8DC10F00435669 /* LoginViewController.m */,
@@ -200,6 +224,9 @@
 				93B15ED01B8DCB4900B75784 /* MessagesViewController.m */,
 				93B15ED21B8DCB6400B75784 /* MenuViewController.h */,
 				93B15ED31B8DCB6400B75784 /* MenuViewController.m */,
+				93CAC24A1B8F76130028482E /* VerifyRegistrationViewController.h */,
+				93CAC24B1B8F76130028482E /* VerifyRegistrationViewController.m */,
+				9385CDD71B91220900C1F79A /* Appearance */,
 				93C2A03A1B8D722D00AD0ADF /* Controllers */,
 				93C2A0381B8D718400AD0ADF /* Model */,
 				93C2A0391B8D71EE00AD0ADF /* SwipeView */,
@@ -212,6 +239,7 @@
 		99B7AE9F192D50D500C1B49C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93CAC2531B8FB9F50028482E /* Friz Quadrata Regular.ttf */,
 				99B7AEA0192D50D500C1B49C /* testing swiping-Info.plist */,
 				99B7AEA1192D50D500C1B49C /* InfoPlist.strings */,
 				99B7AEA4192D50D500C1B49C /* main.m */,
@@ -317,6 +345,7 @@
 				99B7AEB1192D50D500C1B49C /* Images.xcassets in Resources */,
 				99B7AEA3192D50D500C1B49C /* InfoPlist.strings in Resources */,
 				99B7AEAC192D50D500C1B49C /* Main.storyboard in Resources */,
+				93CAC2541B8FBACE0028482E /* Friz Quadrata Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,16 +368,19 @@
 				93BCB41E1B7E4EA3000D6630 /* SummonerController.m in Sources */,
 				99B7AEAF192D50D500C1B49C /* DragCardsViewController.m in Sources */,
 				99B7AED2192E914500C1B49C /* OverlayView.m in Sources */,
+				93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */,
+				93CAC24C1B8F76130028482E /* VerifyRegistrationViewController.m in Sources */,
 				93B15ED41B8DCB6400B75784 /* MenuViewController.m in Sources */,
 				99B7AEA9192D50D500C1B49C /* AppDelegate.m in Sources */,
 				93AE6E961B7D3B8800E896C1 /* NetworkController.m in Sources */,
 				93B15ED11B8DCB4900B75784 /* MessagesViewController.m in Sources */,
 				99B7AECF192D513800C1B49C /* DraggableView.m in Sources */,
-				93FD491A1B8D20B70047BAA4 /* Stack.m in Sources */,
+				93CAC24F1B8F9D800028482E /* FixedSummonerProfileView.m in Sources */,
 				936AAAD71B8DC10F00435669 /* LoginViewController.m in Sources */,
 				93B15ECE1B8DC7D300B75784 /* RegisterViewController.m in Sources */,
+				93CAC2521B8FA3EE0028482E /* WelcomeViewController.m in Sources */,
 				99B7AEA5192D50D500C1B49C /* main.m in Sources */,
-				93FD491F1B8D254D0047BAA4 /* Model.xcdatamodeld in Sources */,
+				93CAC2571B8FC6450028482E /* AppearanceController.m in Sources */,
 				93FD49221B8D28780047BAA4 /* Summoner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,20 +598,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		93FD491D1B8D254D0047BAA4 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				93FD491E1B8D254D0047BAA4 /* Model.xcdatamodel */,
-			);
-			currentVersion = 93FD491E1B8D254D0047BAA4 /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = ../Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 99B7AE8D192D50D500C1B49C /* Project object */;
 }

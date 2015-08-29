@@ -14,22 +14,9 @@
 
 + (SummonerController *)sharedInstance;
 
-#pragma mark - Create
 
-- (Summoner *)createSummoner;
-
-#pragma mark - Retrieve
 
 @property (strong, nonatomic) Summoner *summoner;
-
-#pragma mark - Update
-
-- (void)save;
-
-#pragma mark - Delete
-
-- (void)removeEntry:(Summoner *)summoner;
-
 
 
 @end

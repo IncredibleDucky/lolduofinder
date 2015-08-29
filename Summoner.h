@@ -10,10 +10,10 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Summoner : NSManagedObject
+@interface Summoner : NSObject
 
-@property (nonatomic, retain) NSNumber * summonerID;
-@property (nonatomic, retain) NSString * summonerName;
+@property (nonatomic) NSNumber * summonerID;
+@property (nonatomic) NSString * summonerName;
 @property (nonatomic, retain) NSDate * revisionDate;
 @property (nonatomic, retain) NSNumber * profileIconID;
 @property (nonatomic, retain) NSNumber * summonerLevel;

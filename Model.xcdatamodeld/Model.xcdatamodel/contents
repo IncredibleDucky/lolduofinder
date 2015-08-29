@@ -12,8 +12,9 @@
         <attribute name="summonerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="summonerLevel" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="summonerName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="potentialMatches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Summoner" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Summoner" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Summoner" positionX="-63" positionY="-18" width="128" height="223"/>
     </elements>
 </model>

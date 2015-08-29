@@ -46,6 +46,17 @@ static const NSString * apiKey = @"77169713-d987-4b15-a5d9-4bde08f92c20";
     return urlString;
 }
 
++ (NSString *)getMasteriesForSummonerURLWithSummoner:(Summoner *)summoner{
+    
+    NSString *urlString = [self baseURL];
+    urlString = [urlString stringByAppendingString:@"v1.4/summoner/"];
+    urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"%@/", summoner.summonerID]];
+    urlString = [urlString stringByAppendingString:@"masteries"];
+    urlString = [NetworkController appendURLStringWithAPIKey:urlString];
+
+    return urlString;
+}
+
 + (NSString *)appendURLStringWithAPIKey:(NSString *)urlString {
     
     urlString =  [urlString stringByReplacingOccurrencesOfString:@" " withString:@""];

@@ -40,27 +40,15 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     self = [super initWithFrame:frame];
     if (self) {
         [super layoutSubviews];
-    
-        __weak typeof(self) weakSelf = self;
         
+
         //@property (strong, nonatomic) Summoner *summoner;
         //If self exists create a summoner in model object context
-        if (self.test) {
+
             [self.test setSummonerWithName:@"GodMechanix" completion:^{
-                [weakSelf postDataRequestSetup];
-   }];
-        } else {
-                    self.test = [[SummonerController sharedInstance] createSummoner];
-                    [self.test setSummonerWithName:@"GodMechanix" completion:^{
-                        [weakSelf postDataRequestSetup];
-                    }];
-        }
-
-        [[SummonerController sharedInstance] save];
+                [self postDataRequestSetup];
+            }];
         
-
-        
-  
     }
     return self;
 }
@@ -68,24 +56,23 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
-//#warning customize all of this.  These are just place holders to make it look pretty
-    self.backgroundColor = [UIColor lightGrayColor]; //the gray background colors
-    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
-    [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
-    messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
-    [messageButton setImage:[UIImage imageNamed:@"messageButton"] forState:UIControlStateNormal];
+    #warning customize all of this.  These are just place holders to make it look pretty
+
+    
     xButton = [[UIButton alloc]initWithFrame:CGRectMake(60, 485, 59, 59)];
     [xButton setImage:[UIImage imageNamed:@"xButton"] forState:UIControlStateNormal];
     [xButton addTarget:self action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
+    
     checkButton = [[UIButton alloc]initWithFrame:CGRectMake(200, 485, 59, 59)];
     [checkButton setImage:[UIImage imageNamed:@"checkButton"] forState:UIControlStateNormal];
     [checkButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
+    
     [self addSubview:menuButton];
     [self addSubview:messageButton];
     [self addSubview:xButton];
     [self addSubview:checkButton];
-    [messageButton addTarget:[DragCardsViewController new] action:@selector(messageButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [menuButton addTarget:[DragCardsViewController new] action:@selector(menuButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+
 }
 
 //#warning include own card customization here!
@@ -97,18 +84,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     
     Summoner *newSummoner = [summonerCards objectAtIndex:index];
-    draggableView.summonerName.text = newSummoner.summonerName; //%%% placeholder for card-specific information
-    draggableView.winsLossesLabel.text = [NSString stringWithFormat:@"W: %@", newSummoner.rankedWins];
-    draggableView.lossesLabel.text = [NSString stringWithFormat:@"L: %@", newSummoner.rankedLosses];
-    draggableView.tierDivisionLabel.text = [NSString stringWithFormat:@"%@ %@", newSummoner.rankedTier, newSummoner.rankedDivision];
-    draggableView.leaguePointsLabel.text = [NSString stringWithFormat:@"%@ LP", newSummoner.leaguePoints];
     
-    
-    draggableView.summonerLeagueIcon.image = [UIImage imageNamed:[newSummoner leagueSpecificImageNameForSummoner]];
-    
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/%ld.png", (long)[newSummoner.profileIconID integerValue]]]];
-    
-    draggableView.summonerProfileIcon.image = [UIImage imageWithData:imageData];
+    [draggableView fillCardWithSummonerInfo:newSummoner];
     
     draggableView.delegate = self;
     return draggableView;
@@ -177,7 +154,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }
-
+    
 }
 
 //%%% when you hit the right button, this is called and substitutes the swipe
@@ -214,13 +191,13 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 
 @end

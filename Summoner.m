@@ -15,23 +15,12 @@
 
 @implementation Summoner
 
-@dynamic summonerID;
-@dynamic summonerName;
-@dynamic revisionDate;
-@dynamic profileIconID;
-@dynamic summonerLevel;
-@dynamic rankedTier;
-@dynamic rankedDivision;
-@dynamic leaguePoints;
-@dynamic rankedWins;
-@dynamic rankedLosses;
-@dynamic hasHotStreak;
 
 - (void)setSummonerWithName:(NSString *)summonerName completion:(void (^)(void))completion {
     
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSURL *path = [[NSURL alloc] initWithString:@"https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/GodMechanix?api_key=77169713-d987-4b15-a5d9-4bde08f92c20"];
+    NSURL *path = [[NSURL alloc] initWithString:[NetworkController getSummonderURLWithSummName:summonerName]];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:path completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
@@ -64,9 +53,12 @@
 
 - (void)setSummonerInfoWithDictionary:(NSDictionary *)dictionary completion:(void (^)(void))completion {
     
-        
+
+    
+    NSLog(@"%@", dictionary);
         if(dictionary[@"id"]) {
-            self.summonerID = dictionary[@"id"];
+               NSNumber *num = dictionary[@"id"];
+            self.summonerID = num;
         }
         if(dictionary[@"name"]) {
             self.summonerName = dictionary[@"name"];
