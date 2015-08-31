@@ -11,6 +11,9 @@
 #import "WelcomeViewController.h"
 #import "AppearanceController.h"
 #import "LOLLabel.h"
+#import "Firebase/Firebase.h"
+
+static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
 @interface VerifyRegistrationViewController ()
 
@@ -118,10 +121,11 @@
 }
 
 - (void) createAccount {
-    
-    WelcomeViewController *welcomeViewController = [WelcomeViewController new];
-    
-    [self.navigationController pushViewController:welcomeViewController animated:YES];
+//    Firebase *dataReference = [[Firebase alloc] initWithUrl:rootURL];
+//    dataReference childByAppendingPath:@"/%@",[dataReference.authData.uid]
+//    
+//    dataReference.u
+
     
 }
 /*

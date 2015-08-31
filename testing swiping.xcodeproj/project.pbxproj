@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F332F3F63A006800A0039F0 /* libPods-testing swiping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A9B80CCABE669EF938C88B /* libPods-testing swiping.a */; };
 		936AAAD71B8DC10F00435669 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936AAAD61B8DC10F00435669 /* LoginViewController.m */; };
 		93AE6E961B7D3B8800E896C1 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE6E951B7D3B8800E896C1 /* NetworkController.m */; };
 		93B15ECE1B8DC7D300B75784 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ECD1B8DC7D300B75784 /* RegisterViewController.m */; };
@@ -19,6 +20,7 @@
 		93CAC2541B8FBACE0028482E /* Friz Quadrata Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93CAC2531B8FB9F50028482E /* Friz Quadrata Regular.ttf */; };
 		93CAC2571B8FC6450028482E /* AppearanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC2561B8FC6450028482E /* AppearanceController.m */; };
 		93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC2591B8FE97F0028482E /* LOLLabel.m */; };
+		93E782B71B94F117007E2DD8 /* UserCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E782B61B94F117007E2DD8 /* UserCreationViewController.m */; };
 		93FD491C1B8D24F50047BAA4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FD491B1B8D24F50047BAA4 /* CoreData.framework */; };
 		93FD49221B8D28780047BAA4 /* Summoner.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FD49211B8D28780047BAA4 /* Summoner.m */; };
 		99B7AE99192D50D500C1B49C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B7AE98192D50D500C1B49C /* Foundation.framework */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C38CEB15FB9E561CDAF3425 /* Pods-testing swiping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing swiping.release.xcconfig"; path = "Pods/Target Support Files/Pods-testing swiping/Pods-testing swiping.release.xcconfig"; sourceTree = "<group>"; };
+		576300475D25C95CF9230D19 /* Pods-testing swiping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing swiping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testing swiping/Pods-testing swiping.debug.xcconfig"; sourceTree = "<group>"; };
 		936AAAD51B8DC10F00435669 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		936AAAD61B8DC10F00435669 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		93AE6E941B7D3B8800E896C1 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		93CAC2561B8FC6450028482E /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceController.m; sourceTree = "<group>"; };
 		93CAC2581B8FE97F0028482E /* LOLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLLabel.h; sourceTree = "<group>"; };
 		93CAC2591B8FE97F0028482E /* LOLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLLabel.m; sourceTree = "<group>"; };
+		93E782B51B94F117007E2DD8 /* UserCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCreationViewController.h; sourceTree = "<group>"; };
+		93E782B61B94F117007E2DD8 /* UserCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCreationViewController.m; sourceTree = "<group>"; };
 		93FD491B1B8D24F50047BAA4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		93FD49201B8D28780047BAA4 /* Summoner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Summoner.h; path = ../Summoner.h; sourceTree = "<group>"; };
 		93FD49211B8D28780047BAA4 /* Summoner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Summoner.m; path = ../Summoner.m; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		99B7AED1192E914500C1B49C /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 		99FDDE7719A992F200371454 /* DraggableViewBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableViewBackground.h; sourceTree = "<group>"; };
 		99FDDE7819A992F200371454 /* DraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableViewBackground.m; sourceTree = "<group>"; };
+		C7A9B80CCABE669EF938C88B /* libPods-testing swiping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testing swiping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +120,7 @@
 				99B7AE9B192D50D500C1B49C /* CoreGraphics.framework in Frameworks */,
 				99B7AE9D192D50D500C1B49C /* UIKit.framework in Frameworks */,
 				99B7AE99192D50D500C1B49C /* Foundation.framework in Frameworks */,
+				5F332F3F63A006800A0039F0 /* libPods-testing swiping.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +137,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F8D4E5747CEA3F06AD1976C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				576300475D25C95CF9230D19 /* Pods-testing swiping.debug.xcconfig */,
+				2C38CEB15FB9E561CDAF3425 /* Pods-testing swiping.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9385CDD71B91220900C1F79A /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +201,7 @@
 				99B7AEBD192D50D500C1B49C /* testing swipingTests */,
 				99B7AE97192D50D500C1B49C /* Frameworks */,
 				99B7AE96192D50D500C1B49C /* Products */,
+				3F8D4E5747CEA3F06AD1976C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +222,7 @@
 				99B7AE9A192D50D500C1B49C /* CoreGraphics.framework */,
 				99B7AE9C192D50D500C1B49C /* UIKit.framework */,
 				99B7AEB7192D50D500C1B49C /* XCTest.framework */,
+				C7A9B80CCABE669EF938C88B /* libPods-testing swiping.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,6 +232,8 @@
 			children = (
 				99B7AEA7192D50D500C1B49C /* AppDelegate.h */,
 				99B7AEA8192D50D500C1B49C /* AppDelegate.m */,
+				93E782B51B94F117007E2DD8 /* UserCreationViewController.h */,
+				93E782B61B94F117007E2DD8 /* UserCreationViewController.m */,
 				93CAC2501B8FA3EE0028482E /* WelcomeViewController.h */,
 				93CAC2511B8FA3EE0028482E /* WelcomeViewController.m */,
 				99B7AEAA192D50D500C1B49C /* Main.storyboard */,
@@ -273,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99B7AEC7192D50D500C1B49C /* Build configuration list for PBXNativeTarget "testing swiping" */;
 			buildPhases = (
+				E18A82BF246AB3EAC113B8F2 /* Check Pods Manifest.lock */,
 				99B7AE91192D50D500C1B49C /* Sources */,
 				99B7AE92192D50D500C1B49C /* Frameworks */,
 				99B7AE93192D50D500C1B49C /* Resources */,
+				DDC785B81C8FE4459CBDC2BB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -359,6 +382,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DDC785B81C8FE4459CBDC2BB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testing swiping/Pods-testing swiping-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E18A82BF246AB3EAC113B8F2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		99B7AE91192D50D500C1B49C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -366,6 +422,7 @@
 			files = (
 				99FDDE7919A992F200371454 /* DraggableViewBackground.m in Sources */,
 				93BCB41E1B7E4EA3000D6630 /* SummonerController.m in Sources */,
+				93E782B71B94F117007E2DD8 /* UserCreationViewController.m in Sources */,
 				99B7AEAF192D50D500C1B49C /* DragCardsViewController.m in Sources */,
 				99B7AED2192E914500C1B49C /* OverlayView.m in Sources */,
 				93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */,
@@ -503,6 +560,7 @@
 		};
 		99B7AEC8192D50D500C1B49C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 576300475D25C95CF9230D19 /* Pods-testing swiping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -516,6 +574,7 @@
 		};
 		99B7AEC9192D50D500C1B49C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C38CEB15FB9E561CDAF3425 /* Pods-testing swiping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

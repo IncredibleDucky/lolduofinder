@@ -28,7 +28,7 @@
     self.view.backgroundColor = [UIColor redColor];
     
     [self.getStartedButton setTitle:@"GET STARTED" forState:UIControlStateNormal];
-    self.instructions.text = @"These are my instructions";
+    [self.instructions setText: @"These are my instructions"];
     
     
     [self.view addSubview:self.instructions];

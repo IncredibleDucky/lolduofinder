@@ -11,12 +11,14 @@
 #import "LoginViewController.h"
 #import "AppearanceController.h"
 
+static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [AppearanceController initializeAppearanceDefaults];
-
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor darkGrayColor];
     
