@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Richard Kim. All rights reserved.
 //
 
-#import "NetworkController.h"
+#import "LeagueNetworkController.h"
 
 static const NSString * apiKey = @"77169713-d987-4b15-a5d9-4bde08f92c20";
 
-@implementation NetworkController
+@implementation LeagueNetworkController
 
 + (NSString *)baseURL {
     return @"https://na.api.pvp.net/api/lol/na/";
@@ -22,7 +22,7 @@ static const NSString * apiKey = @"77169713-d987-4b15-a5d9-4bde08f92c20";
     urlString = [urlString stringByAppendingString:@"v1.4/summoner/"];
     urlString = [urlString stringByAppendingString:summID];
     
-    urlString = [NetworkController appendURLStringWithAPIKey:urlString];
+    urlString = [LeagueNetworkController appendURLStringWithAPIKey:urlString];
     return urlString;
 }
 
@@ -32,7 +32,7 @@ static const NSString * apiKey = @"77169713-d987-4b15-a5d9-4bde08f92c20";
     urlString = [urlString stringByAppendingString:@"v1.4/summoner/by-name/"];
     urlString = [urlString stringByAppendingString:summName];
     
-    urlString = [NetworkController appendURLStringWithAPIKey:urlString];
+    urlString = [LeagueNetworkController appendURLStringWithAPIKey:urlString];
     NSLog(@"%@", urlString);
     return urlString;
 }
@@ -41,7 +41,7 @@ static const NSString * apiKey = @"77169713-d987-4b15-a5d9-4bde08f92c20";
     NSString *urlString = [self baseURL];
     urlString = [urlString stringByAppendingString:@"v2.5/league/by-summoner/"];
     urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"%@", summoner.summonerID]];
-    urlString = [NetworkController appendURLStringWithAPIKey:urlString];
+    urlString = [LeagueNetworkController appendURLStringWithAPIKey:urlString];
     
     return urlString;
 }
@@ -52,7 +52,7 @@ static const NSString * apiKey = @"77169713-d987-4b15-a5d9-4bde08f92c20";
     urlString = [urlString stringByAppendingString:@"v1.4/summoner/"];
     urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"%@/", summoner.summonerID]];
     urlString = [urlString stringByAppendingString:@"masteries"];
-    urlString = [NetworkController appendURLStringWithAPIKey:urlString];
+    urlString = [LeagueNetworkController appendURLStringWithAPIKey:urlString];
 
     return urlString;
 }

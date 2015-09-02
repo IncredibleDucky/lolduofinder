@@ -9,7 +9,7 @@
 #import "SummonerController.h"
 #import "Summoner.h"
 
-#import "NetworkController.h"
+#import "LeagueNetworkController.h"
 
 @interface SummonerController ()
 

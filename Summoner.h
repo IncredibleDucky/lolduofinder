@@ -12,20 +12,23 @@
 
 @interface Summoner : NSObject
 
-@property (nonatomic) NSNumber * summonerID;
-@property (nonatomic) NSString * summonerName;
-@property (nonatomic, retain) NSDate * revisionDate;
-@property (nonatomic, retain) NSNumber * profileIconID;
-@property (nonatomic, retain) NSNumber * summonerLevel;
-@property (nonatomic, retain) NSString * rankedTier;
-@property (nonatomic, retain) NSString * rankedDivision;
-@property (nonatomic, retain) NSNumber * leaguePoints;
-@property (nonatomic, retain) NSNumber * rankedWins;
-@property (nonatomic, retain) NSNumber * rankedLosses;
-@property (nonatomic, retain) NSNumber * hasHotStreak;
+@property (nonatomic, strong) NSNumber * summonerID;
+@property (nonatomic, strong) NSString * summonerName;
+@property (nonatomic, strong) NSDate * revisionDate;
+@property (nonatomic, strong) NSNumber * profileIconID;
+@property (nonatomic, strong) NSNumber * summonerLevel;
+@property (nonatomic, strong) NSString * rankedTier;
+@property (nonatomic, strong) NSString * rankedDivision;
+@property (nonatomic, strong) NSNumber * leaguePoints;
+@property (nonatomic, strong) NSNumber * rankedWins;
+@property (nonatomic, strong) NSNumber * rankedLosses;
+@property (nonatomic, strong) NSNumber * hasHotStreak;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (void)setSummonerWithName:(NSString *)summonerName completion:(void (^)(void))completion;
 
 - (NSString *)leagueSpecificImageNameForSummoner;
+-(NSDictionary *)dictionaryRepresentation;
+
 
 @end

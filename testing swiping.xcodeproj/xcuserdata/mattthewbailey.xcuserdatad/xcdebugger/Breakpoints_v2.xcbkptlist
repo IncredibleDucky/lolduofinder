@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summoner.m"
-            timestampString = "462386421.217614"
+            timestampString = "462833255.2671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-setSummonerWithName:completion:"
             landmarkType = "5">
          </BreakpointContent>

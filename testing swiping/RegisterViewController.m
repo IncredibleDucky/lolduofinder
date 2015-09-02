@@ -23,7 +23,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 
 @property (strong, nonatomic) UIButton *registerButton;
 @property (strong, nonatomic) UISearchBar *searchBar;
-@property (strong, nonatomic) Summoner *user;
+@property (strong, nonatomic) Summoner *summoner;
 
 @end
 
@@ -65,26 +65,29 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 
 
 -(void)registerButtonPressed {
-    
     VerifyRegistrationViewController *newViewController =  [VerifyRegistrationViewController new];
-    newViewController.summoner = self.user;
+    newViewController.summoner = self.summoner;
     [self.navigationController pushViewController:newViewController animated:YES];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     
     [searchBar resignFirstResponder];
-    self.user = [[Summoner alloc] init];
+    self.summoner = [[Summoner alloc] init];
     NSString *summonerName = searchBar.text;
-    [self.user setSummonerWithName:summonerName completion:^{
+    [self.summoner setSummonerWithName:summonerName completion:^{
         
         Summoner *weakSummoner;
-        weakSummoner = self.user;
+        weakSummoner = self.summoner;
         FixedSummonerProfileView *summonerView = [[FixedSummonerProfileView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - CARD_WIDTH)/2, (self.view.frame.size.height - CARD_HEIGHT)/2 + 50, CARD_WIDTH, CARD_HEIGHT)];
-        [summonerView fillCardWithSummonerInfo:weakSummoner];
+        [summonerView updateWithSummoner:self.summoner];
+
+
         [summonerView addSubview:self.registerButton];
         [self.view addSubview:summonerView];
         [self.view setNeedsDisplay];
+
+
     
     }];
     

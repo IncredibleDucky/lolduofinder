@@ -7,7 +7,8 @@
 //
 
 #import "VerifyRegistrationViewController.h"
-#import "NetworkController.h"
+#import "LeagueNetworkController.h"
+#import "SummonerController.h"
 #import "WelcomeViewController.h"
 #import "AppearanceController.h"
 #import "LOLLabel.h"
@@ -72,7 +73,7 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
     
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSURL *url = [NSURL URLWithString:[NetworkController getMasteriesForSummonerURLWithSummoner:self.summoner]];
+    NSURL *url = [NSURL URLWithString:[LeagueNetworkController getMasteriesForSummonerURLWithSummoner:self.summoner]];
     
     //NSLog(@"%@", url);
     
@@ -121,10 +122,12 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 }
 
 - (void) createAccount {
-//    Firebase *dataReference = [[Firebase alloc] initWithUrl:rootURL];
-//    dataReference childByAppendingPath:@"/%@",[dataReference.authData.uid]
-//    
-//    dataReference.u
+    Firebase *dataReference = [[Firebase alloc] initWithUrl:rootURL];
+    
+    //Saves summoner data at <baseURL>/users/<uid>/summoner
+    [[[[dataReference childByAppendingPath:@"users"] childByAppendingPath: dataReference.authData.uid] childByAppendingPath: @"summoner"]
+    setValue:[[SummonerController sharedInstance].summoner dictionaryRepresentation]];
+    
 
     
 }

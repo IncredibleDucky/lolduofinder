@@ -421,7 +421,7 @@
     NSLog(@"NO");
 }
 
--(void)fillCardWithSummonerInfo:(Summoner *)summoner {
+-(void)updateWithSummoner:(Summoner *)summoner {
     
     self.summonerName.text = summoner.summonerName; //%%% placeholder for card-specific information
     self.winsLossesLabel.text = [NSString stringWithFormat:@"W: %@", summoner.rankedWins];

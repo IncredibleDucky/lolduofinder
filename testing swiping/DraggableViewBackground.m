@@ -85,7 +85,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     
     Summoner *newSummoner = [summonerCards objectAtIndex:index];
     
-    [draggableView fillCardWithSummonerInfo:newSummoner];
+    [draggableView updateWithSummoner:newSummoner];
     
     draggableView.delegate = self;
     return draggableView;

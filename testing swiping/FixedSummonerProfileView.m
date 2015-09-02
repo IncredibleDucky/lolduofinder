@@ -58,7 +58,7 @@
         self.backgroundColor = [UIColor darkGrayColor];
         
 
-        [self fillCardWithSummonerInfo:self.summoner];
+        [self updateWithSummoner:self.summoner];
         
         
         //Add all subviews to card.
@@ -81,7 +81,7 @@
     self.layer.shadowOffset = CGSizeMake(1, 1);
 }
 
--(void)fillCardWithSummonerInfo:(Summoner *)summoner {
+-(void)updateWithSummoner:(Summoner *)summoner {
     
     self.summonerName.text = summoner.summonerName; //%%% placeholder for card-specific information
     self.winsLossesLabel.text = [NSString stringWithFormat:@"W: %@", summoner.rankedWins];

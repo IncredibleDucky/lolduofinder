@@ -61,7 +61,7 @@
 @property (nonatomic, strong)LOLLabel* tierDivisionLabel;
 @property (nonatomic, strong)LOLLabel* leaguePointsLabel;
 
--(void)fillCardWithSummonerInfo:(Summoner *)summoner;
+-(void)updateWithSummoner:(Summoner *)summoner;
 
 -(void)leftClickAction;
 -(void)rightClickAction;

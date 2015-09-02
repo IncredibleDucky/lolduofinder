@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Summoner.h"
 
-@interface NetworkController : NSObject
+@interface LeagueNetworkController : NSObject
 
 + (NSString *)baseURL;
 + (NSString *)appendURLStringWithAPIKey:(NSString *)urlString;

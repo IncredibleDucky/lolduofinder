@@ -9,7 +9,7 @@
 
 #import "DragCardsViewController.h"
 #import "DraggableViewBackground.h"
-#import "NetworkController.h"
+#import "LeagueNetworkController.h"
 #import "SummonerController.h"
 #import "Summoner.h"
 #import "MessagesViewController.h"

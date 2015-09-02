@@ -9,10 +9,12 @@
 #import "LoginViewController.h"
 #import "DragCardsViewController.h"
 #import "RegisterViewController.h"
+#import "VerifyRegistrationViewController.h"
 #import "AppearanceController.h"
 #import "UserCreationViewController.h"
 #import "LOLLabel.h"
 #import "Firebase/Firebase.h"
+#import "KeychainItemWrapper.h"
 
 static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
@@ -50,10 +52,24 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
     self.passwordTextField.secureTextEntry = YES;
     self.registerButton.backgroundColor = [UIColor redColor];
     self.loginButton.backgroundColor = [UIColor redColor];
+    
+    //Use keychain check if user has logged in before, if they have, auto log in.
+    KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"emailLogin" accessGroup:nil];
+    NSData *passwordData = [keyChain objectForKey:(__bridge id)(kSecValueData)];
+    NSString *email = [keyChain objectForKey:(__bridge id)(kSecAttrAccount)];
 
     
     [self.loginButton addTarget:self action:@selector(loginButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.registerButton addTarget:self action:@selector(registerButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //Auto Log in
+    if (![email isEqualToString:@""]) {
+        self.emailTextField.text = email;
+        self.passwordTextField.text = [[NSString alloc] initWithBytes:[passwordData bytes] length:[passwordData length]
+                                                                                  encoding:NSUTF8StringEncoding];
+        [self loginButtonPressed];
+    }
     
     [self.view addSubview:self.loginButton];
     [self.view addSubview:self.registerButton];
@@ -75,10 +91,36 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
             NSLog(@"%@", error);
         }else {
             NSLog(@"%@", authData);
+            
+
+            [[[[ref childByAppendingPath:@"users"]
+              childByAppendingPath:authData.uid] childByAppendingPath:@"provider"] setValue:authData.provider];
+            [[[[ref childByAppendingPath:@"users"]
+               childByAppendingPath:authData.uid] childByAppendingPath:@"email"] setValue:authData.providerData[@"email"]];
+            
+            //Set KeyChain after successfull login.
+            KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"emailLogin" accessGroup:nil];
+            
+            [keyChain setObject:self.passwordTextField.text forKey:(__bridge id)(kSecValueData)];
+            [keyChain setObject:self.emailTextField.text forKey:(__bridge id)(kSecAttrAccount)];
+            
+            Firebase *summonerRef = [[Firebase alloc] initWithUrl:[rootURL stringByAppendingString:[NSString stringWithFormat:@"/users/%@/summoner", authData.uid]]];
+            __block Summoner *summonerForUser = [Summoner new];//Summoner to be loaded from server.
+            
+            [summonerRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                NSLog(@"%@", snapshot.value);
+                  summonerForUser = [[Summoner alloc] initWithDictionary:(NSDictionary *)snapshot.value];
+            } withCancelBlock:^(NSError *error) {
+                NSLog(@"%@", error.description);
+            }];
+            
+            
+            [self.navigationController pushViewController:[RegisterViewController new] animated:YES];
+            
         }
     }];
     
-    [self.navigationController pushViewController:[DragCardsViewController new] animated:YES];
+ 
 }
 
 - (void)registerButtonPressed {
