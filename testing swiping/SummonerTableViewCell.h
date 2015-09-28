@@ -10,4 +10,9 @@
 
 @interface SummonerTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) UIImageView *summonerProfileIcon;
+@property (strong, nonatomic) UILabel *summonerName;
+@property (strong, nonatomic) UILabel *summonerRank;
+
+
 @end

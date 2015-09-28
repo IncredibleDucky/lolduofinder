@@ -7,17 +7,26 @@
 //
 
 #import "MenuViewController.h"
-
+#import "SummonerController.h"
+#import "FirebaseNetworkController.h"
 @interface MenuViewController ()
+
+@property (nonatomic, strong, readwrite) UIBarButtonItem *logoutButton;
+@property (nonatomic, strong, readwrite) UIBarButtonItem *backButton;
+
 
 @end
 
 @implementation MenuViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor purpleColor];
-    // Do any additional setup after loading the view.
+    self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logoutButtonPressed)];
+    self.backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back >" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonPressed)];
+    self.navigationItem.leftBarButtonItem = self.logoutButton;    // Do any additional setup after loading the view.
+    self.navigationItem.rightBarButtonItem = self.backButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,6 +34,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+ - (void)logoutButtonPressed{
+     NSLog(@"Logout");
+     [SummonerController sharedInstance].summoner = [Summoner new];
+     [FirebaseNetworkController logout];
+     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)backButtonPressed{
+    
+    CATransition *animation = [CATransition animation];
+    [animation setDuration:0.25];
+    [animation setType:kCATransitionPush];
+    [animation setSubtype:kCATransitionFromRight];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [self.navigationController.view.layer addAnimation:animation forKey:kCATransition];
+
+    [self.navigationController popViewControllerAnimated:NO];
+}
 /*
 #pragma mark - Navigation
 

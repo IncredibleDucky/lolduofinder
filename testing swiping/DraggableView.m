@@ -17,6 +17,7 @@
 
 #import "DraggableView.h"
 #import "SummonerController.h"
+#import "FirebaseNetworkController.h"
 
 @implementation DraggableView {
     CGFloat xFromCenter;
@@ -68,7 +69,7 @@
         [leaguePointsLabel setTextAlignment:NSTextAlignmentCenter];
         leaguePointsLabel.textColor = [UIColor whiteColor];
         
-        self.backgroundColor = [UIColor darkGrayColor];
+        self.backgroundColor = [UIColor lightGrayColor];
         
 #warning placeholder stuff, replace with card-specific information }
         
@@ -251,7 +252,7 @@
 //        
 //
         
-        overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
+        overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         overlayView.alpha = 0;
     //    [self addSubview:self.information];
         [self addSubview:overlayView];
@@ -369,6 +370,10 @@
                      }];
     
     [delegate cardSwipedRight:self];
+    [FirebaseNetworkController cardSwipedRightWithCompletion:^{
+        NSLog(@"YES");
+        [self updateQueried];
+    }];
     
     NSLog(@"YES");
 }
@@ -401,7 +406,10 @@
                      }];
     
     [delegate cardSwipedRight:self];
-    
+    [FirebaseNetworkController cardSwipedRightWithCompletion:^{
+        NSLog(@"YES");
+        [self updateQueried];
+    }];
     NSLog(@"YES");
 }
 
@@ -438,6 +446,10 @@
     
 }
 
-
+-(void)updateQueried {
+    NSMutableArray *updateQueried = [[SummonerController sharedInstance].queried mutableCopy];
+    [updateQueried removeObjectAtIndex:0];
+    [SummonerController sharedInstance].queried = updateQueried;
+}
 
 @end

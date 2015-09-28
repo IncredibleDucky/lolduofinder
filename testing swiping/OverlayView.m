@@ -41,7 +41,7 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    imageView.frame = CGRectMake(50, 50, 100, 100);
+    imageView.frame = CGRectMake((self.frame.size.width/2)-50, (self.frame.size.height/2)-50, 100, 100);
 }
 
 /*

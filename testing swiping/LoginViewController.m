@@ -15,8 +15,9 @@
 #import "LOLLabel.h"
 #import "Firebase/Firebase.h"
 #import "KeychainItemWrapper.h"
+#import "SummonerController.h"
+#import "FirebaseNetworkController.h"
 
-static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
 @interface LoginViewController ()
 
@@ -68,7 +69,6 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
         self.emailTextField.text = email;
         self.passwordTextField.text = [[NSString alloc] initWithBytes:[passwordData bytes] length:[passwordData length]
                                                                                   encoding:NSUTF8StringEncoding];
-        [self loginButtonPressed];
     }
     
     [self.view addSubview:self.loginButton];
@@ -84,43 +84,22 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
 
 - (void)loginButtonPressed {
-    Firebase *ref = [[Firebase alloc] initWithUrl:rootURL];
-    
-    [ref authUser:self.emailTextField.text password:self.passwordTextField.text withCompletionBlock:^(NSError *error, FAuthData *authData) {
-        if(error ) {
-            NSLog(@"%@", error);
-        }else {
-            NSLog(@"%@", authData);
-            
 
-            [[[[ref childByAppendingPath:@"users"]
-              childByAppendingPath:authData.uid] childByAppendingPath:@"provider"] setValue:authData.provider];
-            [[[[ref childByAppendingPath:@"users"]
-               childByAppendingPath:authData.uid] childByAppendingPath:@"email"] setValue:authData.providerData[@"email"]];
-            
-            //Set KeyChain after successfull login.
-            KeychainItemWrapper *keyChain = [[KeychainItemWrapper alloc] initWithIdentifier:@"emailLogin" accessGroup:nil];
-            
-            [keyChain setObject:self.passwordTextField.text forKey:(__bridge id)(kSecValueData)];
-            [keyChain setObject:self.emailTextField.text forKey:(__bridge id)(kSecAttrAccount)];
-            
-            Firebase *summonerRef = [[Firebase alloc] initWithUrl:[rootURL stringByAppendingString:[NSString stringWithFormat:@"/users/%@/summoner", authData.uid]]];
-            __block Summoner *summonerForUser = [Summoner new];//Summoner to be loaded from server.
-            
-            [summonerRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                NSLog(@"%@", snapshot.value);
-                  summonerForUser = [[Summoner alloc] initWithDictionary:(NSDictionary *)snapshot.value];
-            } withCancelBlock:^(NSError *error) {
-                NSLog(@"%@", error.description);
-            }];
-            
-            
+    [FirebaseNetworkController loginWithUserName:self.emailTextField.text password:self.passwordTextField.text completion:^{
+        if ([SummonerController sharedInstance].summoner) {
+            if(![self.navigationController.topViewController isKindOfClass:[DragCardsViewController class]]) {
+                [FirebaseNetworkController queryForMatchesWithCompletion:^{
+                    DragCardsViewController *dragCardsViewController = [DragCardsViewController new];
+                    [self.navigationController pushViewController:dragCardsViewController animated:YES];
+                }];
+
+            }
+        }else {
             [self.navigationController pushViewController:[RegisterViewController new] animated:YES];
-            
         }
     }];
-    
- 
+
+
 }
 
 - (void)registerButtonPressed {

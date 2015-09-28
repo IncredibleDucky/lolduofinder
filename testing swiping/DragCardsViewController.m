@@ -10,6 +10,7 @@
 #import "DragCardsViewController.h"
 #import "DraggableViewBackground.h"
 #import "LeagueNetworkController.h"
+#import "FirebaseNetworkController.h"
 #import "SummonerController.h"
 #import "Summoner.h"
 #import "MessagesViewController.h"
@@ -27,9 +28,12 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
     DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
+    
 
+    
     [self.view addSubview:draggableBackground];
     [self.navigationItem setHidesBackButton:YES animated:YES];
     
@@ -45,7 +49,10 @@
     [self.navigationController.navigationBar addSubview:self.menuButton];
     [self.navigationController.navigationBar addSubview:self.messageButton];
     
+//    [FirebaseNetworkController updateUsersSummoner];
+    
     self.view.backgroundColor = [UIColor grayColor];
+    
 
 }
 
@@ -63,11 +70,25 @@
 
 
 -(void)messageButtonPressed{
-    [self.navigationController pushViewController:[MessagesViewController new] animated:YES];
+    for (int i = 0; i < [SummonerController sharedInstance].matches.count; i++) {
+            [FirebaseNetworkController loadMatchesSummonersWithUIDAtIndex:(NSInteger)i WithCompletion:^{
+                [self.navigationController pushViewController:[MessagesViewController new] animated:YES];
+        }];
+    }
 }
 
 -(void)menuButtonPressed{
-    [self.navigationController pushViewController:[MenuViewController new] animated:YES];
+    
+    MenuViewController *menuViewController = [[MenuViewController alloc] init];
+    
+    CATransition *animation = [CATransition animation];
+    [animation setDuration:0.25];
+    [animation setType:kCATransitionPush];
+    [animation setSubtype:kCATransitionFromLeft];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [self.navigationController.view.layer addAnimation:animation forKey:kCATransition];
+    [self.navigationController pushViewController:menuViewController animated:NO];
+
 
 }
 

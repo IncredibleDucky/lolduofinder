@@ -9,8 +9,8 @@
 #import "UserCreationViewController.h"
 #import "RegisterViewController.h"
 #import "Firebase/Firebase.h"
+#import "FirebaseNetworkController.h"
 
-static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
 @interface UserCreationViewController ()
 
@@ -58,19 +58,9 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
 - (void)registrationButtonClicked {
     
-    Firebase *ref = [[Firebase alloc] initWithUrl:rootURL];
-    
-    [ref createUser:self.emailTextField.text password:self.passwordTextField.text withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
-        
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            NSString *userID = [result objectForKey:@"uid"];
-            NSLog(@"Successfully created user account with uid %@", userID);
-        }
-    }];
-    
+    [FirebaseNetworkController createUserWithEmail:self.emailTextField.text andPassword:self.passwordTextField.text];
     [self.navigationController pushViewController:[RegisterViewController new] animated:YES];
+    
 }
 /*
 #pragma mark - Navigation

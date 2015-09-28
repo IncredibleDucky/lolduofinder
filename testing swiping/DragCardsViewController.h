@@ -32,8 +32,11 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "Summoner.h"
 
 @interface DragCardsViewController : UIViewController
+
+@property (strong, nonatomic) Summoner *summoner;
 -(void)messageButtonPressed;
 
 

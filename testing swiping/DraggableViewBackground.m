@@ -8,6 +8,7 @@
 
 #import "DragCardsViewController.h"
 #import "DraggableViewBackground.h"
+#import "FirebaseNetworkController.h"
 #import "Summoner.h"
 #import "SummonerController.h"
 
@@ -42,12 +43,13 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         [super layoutSubviews];
         
 
-        //@property (strong, nonatomic) Summoner *summoner;
-        //If self exists create a summoner in model object context
 
-            [self.test setSummonerWithName:@"GodMechanix" completion:^{
-                [self postDataRequestSetup];
-            }];
+        summonerCards = [NSArray arrayWithArray:[SummonerController sharedInstance].queried];//%%% placeholder for card-specific information
+        [self setupView];
+        loadedCards = [[NSMutableArray alloc] init];
+        allCards = [[NSMutableArray alloc] init];
+        cardsLoadedIndex = 0;
+        [self loadCards];
         
     }
     return self;
@@ -67,6 +69,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [checkButton setImage:[UIImage imageNamed:@"checkButton"] forState:UIControlStateNormal];
     [checkButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
     [self addSubview:menuButton];
     [self addSubview:messageButton];
     [self addSubview:xButton];
@@ -82,8 +86,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 -(DraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
-    
-    Summoner *newSummoner = [summonerCards objectAtIndex:index];
+  
+    Summoner *newSummoner = [SummonerController sharedInstance].cards[index];
     
     [draggableView updateWithSummoner:newSummoner];
     
@@ -94,6 +98,9 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards
 {
+    
+      [FirebaseNetworkController loadSummonersWithUIDWithCompletion:^{
+
     if([summonerCards count] > 0) {
         NSInteger numLoadedCardsCap =(([summonerCards count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[summonerCards count]);
         //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
@@ -106,20 +113,23 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
             if (i<numLoadedCardsCap) {
                 //%%% adds a small number of cards to be loaded
                 [loadedCards addObject:newCard];
+                NSLog(@"Hello");
             }
         }
         
         //%%% displays the small number of loaded cards dictated by MAX_BUFFER_SIZE so that not all the cards
         // are showing at once and clogging a ton of data
-        for (int i = 0; i<[loadedCards count]; i++) {
-            if (i>0) {
-                [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i-1]];
+        for (int j = 0; j<[loadedCards count]; j++) {
+            if (j>0) {
+                [self insertSubview:[loadedCards objectAtIndex:j] belowSubview:[loadedCards objectAtIndex:j-1]];
             } else {
-                [self addSubview:[loadedCards objectAtIndex:i]];
+                [self addSubview:[loadedCards objectAtIndex:j]];
             }
             cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
         }
     }
+          
+      }];
 }
 
 #warning include own action here!
@@ -179,16 +189,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [dragView leftClickAction];
 }
 
-
-- (void)postDataRequestSetup {
-    NSLog(@"%@", self.test.summonerID);
-    [self setupView];
-    summonerCards = [[NSArray alloc]initWithObjects: self.test,  nil]; //%%% placeholder for card-specific information
-    loadedCards = [[NSMutableArray alloc] init];
-    allCards = [[NSMutableArray alloc] init];
-    cardsLoadedIndex = 0;
-    [self loadCards];
-}
 
 /*
  // Only override drawRect: if you perform custom drawing.

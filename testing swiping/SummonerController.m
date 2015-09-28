@@ -13,9 +13,13 @@
 
 @interface SummonerController ()
 
-@property (strong, nonatomic, readwrite) NSMutableArray *leftSwipes;
-@property (strong, nonatomic, readwrite) NSMutableArray *rightSwipes;
+@property (strong, nonatomic, readwrite) NSMutableArray *queried;
+@property (strong, nonatomic, readwrite) NSMutableArray *potentialMatches;
+@property (strong, nonatomic, readwrite) NSMutableArray *pendingMatches;
 @property (strong, nonatomic, readwrite) NSMutableArray *matches;
+@property (strong, nonatomic, readwrite) NSMutableArray *matchesSummoners;
+@property (strong, nonatomic, readwrite) NSMutableArray *denied;
+@property (strong, nonatomic, readwrite) NSMutableArray *cards;
 
 @end
 
@@ -27,21 +31,17 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [SummonerController new];
- //Instantiate Shared Instance Properties
+        sharedInstance.queried = [NSMutableArray new];
+        sharedInstance.matches = [NSMutableArray new];
+        sharedInstance.matchesSummoners = [NSMutableArray new];
+        sharedInstance.potentialMatches = [NSMutableArray new];
+        sharedInstance.denied = [NSMutableArray new];
+        sharedInstance.pendingMatches = [NSMutableArray new];
+        sharedInstance.cards = [NSMutableArray new];
+//Instantiate Shared Instance Properties
     });
     return sharedInstance;
 }
-
-#pragma mark - Create
-
-
-#pragma mark - Retrieve
-
-
-#pragma mark - Update
-
-
-#pragma mark - Delete
 
 
 @end

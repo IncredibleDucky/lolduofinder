@@ -11,7 +11,6 @@
 #import "LoginViewController.h"
 #import "AppearanceController.h"
 
-static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
 @implementation AppDelegate
 

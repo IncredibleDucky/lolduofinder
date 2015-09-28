@@ -17,6 +17,8 @@
 		93B15ECE1B8DC7D300B75784 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ECD1B8DC7D300B75784 /* RegisterViewController.m */; };
 		93B15ED11B8DCB4900B75784 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ED01B8DCB4900B75784 /* MessagesViewController.m */; };
 		93B15ED41B8DCB6400B75784 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ED31B8DCB6400B75784 /* MenuViewController.m */; };
+		93B2DCF31BB8FC1200A82C64 /* SummonerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B2DCF21BB8FC1200A82C64 /* SummonerTableViewCell.m */; };
+		93B2DCF61BB9216200A82C64 /* FirechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B2DCF51BB9216200A82C64 /* FirechatViewController.m */; };
 		93BCB41E1B7E4EA3000D6630 /* SummonerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BCB41D1B7E4EA3000D6630 /* SummonerController.m */; };
 		93CAC24C1B8F76130028482E /* VerifyRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC24B1B8F76130028482E /* VerifyRegistrationViewController.m */; };
 		93CAC24F1B8F9D800028482E /* FixedSummonerProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC24E1B8F9D800028482E /* FixedSummonerProfileView.m */; };
@@ -76,6 +78,10 @@
 		93B15ED01B8DCB4900B75784 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		93B15ED21B8DCB6400B75784 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = ../MenuViewController.h; sourceTree = "<group>"; };
 		93B15ED31B8DCB6400B75784 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ../MenuViewController.m; sourceTree = "<group>"; };
+		93B2DCF11BB8FC1200A82C64 /* SummonerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonerTableViewCell.h; sourceTree = "<group>"; };
+		93B2DCF21BB8FC1200A82C64 /* SummonerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummonerTableViewCell.m; sourceTree = "<group>"; };
+		93B2DCF41BB9216200A82C64 /* FirechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirechatViewController.h; sourceTree = "<group>"; };
+		93B2DCF51BB9216200A82C64 /* FirechatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirechatViewController.m; sourceTree = "<group>"; };
 		93BCB41C1B7E4EA3000D6630 /* SummonerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonerController.h; sourceTree = "<group>"; };
 		93BCB41D1B7E4EA3000D6630 /* SummonerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummonerController.m; sourceTree = "<group>"; };
 		93CAC24A1B8F76130028482E /* VerifyRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerifyRegistrationViewController.h; path = ../VerifyRegistrationViewController.h; sourceTree = "<group>"; };
@@ -181,8 +187,6 @@
 		93C2A0391B8D71EE00AD0ADF /* SwipeView */ = {
 			isa = PBXGroup;
 			children = (
-				99B7AEAD192D50D500C1B49C /* DragCardsViewController.h */,
-				99B7AEAE192D50D500C1B49C /* DragCardsViewController.m */,
 				99FDDE7719A992F200371454 /* DraggableViewBackground.h */,
 				99FDDE7819A992F200371454 /* DraggableViewBackground.m */,
 				99B7AECD192D513800C1B49C /* DraggableView.h */,
@@ -262,10 +266,16 @@
 				93B15ECD1B8DC7D300B75784 /* RegisterViewController.m */,
 				93B15ECF1B8DCB4900B75784 /* MessagesViewController.h */,
 				93B15ED01B8DCB4900B75784 /* MessagesViewController.m */,
+				93B2DCF11BB8FC1200A82C64 /* SummonerTableViewCell.h */,
+				93B2DCF21BB8FC1200A82C64 /* SummonerTableViewCell.m */,
 				93B15ED21B8DCB6400B75784 /* MenuViewController.h */,
 				93B15ED31B8DCB6400B75784 /* MenuViewController.m */,
 				93CAC24A1B8F76130028482E /* VerifyRegistrationViewController.h */,
 				93CAC24B1B8F76130028482E /* VerifyRegistrationViewController.m */,
+				99B7AEAD192D50D500C1B49C /* DragCardsViewController.h */,
+				99B7AEAE192D50D500C1B49C /* DragCardsViewController.m */,
+				93B2DCF41BB9216200A82C64 /* FirechatViewController.h */,
+				93B2DCF51BB9216200A82C64 /* FirechatViewController.m */,
 				9385CDD71B91220900C1F79A /* Appearance */,
 				93C2A03A1B8D722D00AD0ADF /* Controllers */,
 				93C2A0381B8D718400AD0ADF /* Model */,
@@ -449,11 +459,13 @@
 				93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */,
 				93CAC24C1B8F76130028482E /* VerifyRegistrationViewController.m in Sources */,
 				93B15ED41B8DCB6400B75784 /* MenuViewController.m in Sources */,
+				93B2DCF31BB8FC1200A82C64 /* SummonerTableViewCell.m in Sources */,
 				99B7AEA9192D50D500C1B49C /* AppDelegate.m in Sources */,
 				93AE6E961B7D3B8800E896C1 /* LeagueNetworkController.m in Sources */,
 				93B15ED11B8DCB4900B75784 /* MessagesViewController.m in Sources */,
 				99B7AECF192D513800C1B49C /* DraggableView.m in Sources */,
 				93CAC24F1B8F9D800028482E /* FixedSummonerProfileView.m in Sources */,
+				93B2DCF61BB9216200A82C64 /* FirechatViewController.m in Sources */,
 				936AAAD71B8DC10F00435669 /* LoginViewController.m in Sources */,
 				93B15ECE1B8DC7D300B75784 /* RegisterViewController.m in Sources */,
 				93CAC2521B8FA3EE0028482E /* WelcomeViewController.m in Sources */,

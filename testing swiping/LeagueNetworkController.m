@@ -8,7 +8,7 @@
 
 #import "LeagueNetworkController.h"
 
-static const NSString * apiKey = @"77169713-d987-4b15-a5d9-4bde08f92c20";
+static const NSString * apiKey = @"8067b586-d3da-4b55-81d0-78bf5046ee8b";
 
 @implementation LeagueNetworkController
 

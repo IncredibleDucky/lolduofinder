@@ -10,4 +10,8 @@
 
 @interface FirechatViewController : UIViewController
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *myUID;
+@property (nonatomic, strong) NSString *matchUID;
+
 @end

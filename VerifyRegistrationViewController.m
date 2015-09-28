@@ -13,8 +13,9 @@
 #import "AppearanceController.h"
 #import "LOLLabel.h"
 #import "Firebase/Firebase.h"
+#import "FirebaseNetworkController.h"
+#import "DragCardsViewController.h"
 
-static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
 
 @interface VerifyRegistrationViewController ()
 
@@ -113,7 +114,9 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
             //Create Account?
             NSLog(@"You're Verified!!!");
             
-            [self createAccount];
+            [FirebaseNetworkController updateUsersSummoner];
+            
+            [self.navigationController pushViewController:[DragCardsViewController new] animated:YES];
             
             break;
         }
@@ -121,16 +124,7 @@ static NSString *rootURL = @"https://intense-inferno-4374.firebaseio.com";
     
 }
 
-- (void) createAccount {
-    Firebase *dataReference = [[Firebase alloc] initWithUrl:rootURL];
-    
-    //Saves summoner data at <baseURL>/users/<uid>/summoner
-    [[[[dataReference childByAppendingPath:@"users"] childByAppendingPath: dataReference.authData.uid] childByAppendingPath: @"summoner"]
-    setValue:[[SummonerController sharedInstance].summoner dictionaryRepresentation]];
-    
 
-    
-}
 /*
  #pragma mark - Navigation
  
