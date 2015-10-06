@@ -36,6 +36,8 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
 + (void)loginWithUserName:(NSString *)username password:(NSString *)password completion:(void (^)(void))completion{
     Firebase *ref = [[Firebase alloc] initWithUrl:rootURL];
     
+    if(ref.authData.uid) {
+        
     [ref authUser:username password:password withCompletionBlock:^(NSError *error, FAuthData *authData) {
         if(error ) {
             NSLog(@"%@", error);
@@ -49,14 +51,13 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
             [keyChain setObject:password forKey:(__bridge id)(kSecValueData)];
             [keyChain setObject:username forKey:(__bridge id)(kSecAttrAccount)];
             [FirebaseNetworkController loadUsersSummonerWithCompletion:^{
-                //                [FirebaseNetworkController loadUsersPotentialMatchesWithCompletion:^{
+                NSLog(@"Hello");
                 completion();
             }];
-            //
-            //            }];
+       
         }
     }];
-    
+    }
 }
 
 + (void)loadUsersSummonerWithCompletion:(void (^)(void))completion {

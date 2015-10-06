@@ -17,8 +17,6 @@
 
 + (void)loginWithUserName:(NSString *)username password:(NSString *)password completion:(void (^)(void))completion;
 
-+ (void)loadUsersSummonerWithCompletion:(void (^)(void))completion;
-
 + (void)loadUsersPotentialMatches;
 
 + (void)grabPotentialMatches;
