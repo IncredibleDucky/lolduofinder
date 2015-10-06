@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -37,6 +36,9 @@
                     <color key="textColor" red="0.71372549019607845" green="0.59215686274509804" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="8" y="485" width="83" height="30"/>
+                    </variation>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fsw-vm-Pfu">
                     <rect key="frame" x="8" y="247" width="584" height="30"/>
@@ -45,65 +47,113 @@
                     <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="8" y="447" width="83" height="30"/>
+                    </variation>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-d5-0wL">
-                    <rect key="frame" x="8" y="324" width="150" height="88"/>
-                    <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
-                    <state key="normal" title="Login">
-                        <color key="titleColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" red="0.83529411760000005" green="0.76470588240000004" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="hoK-un-BM0"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TK-o4-XgK">
-                    <rect key="frame" x="442" y="324" width="150" height="89"/>
-                    <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
-                    <state key="normal" title="Forgot Password?">
-                        <color key="titleColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" red="0.83529411760000005" green="0.76470588240000004" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="forgotPasswordButtonPressed:" destination="-1" eventType="touchUpInside" id="BdL-qb-ara"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FB-gF-jpl">
-                    <rect key="frame" x="225" y="324" width="150" height="89"/>
+                    <rect key="frame" x="265" y="324" width="70" height="85"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="Nre-af-4XH"/>
-                        <constraint firstAttribute="height" constant="89" id="Sek-KO-tbg"/>
+                        <constraint firstAttribute="height" constant="85" id="aO9-Fu-8xa"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
                     <state key="normal" title="Register">
                         <color key="titleColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" red="0.83529411760000005" green="0.76470588240000004" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="242" y="523" width="79" height="95"/>
+                    </variation>
                     <connections>
                         <action selector="registerButtonPressed:" destination="-1" eventType="touchUpInside" id="Ehk-pW-cs2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-d5-0wL">
+                    <rect key="frame" x="138" y="324" width="80" height="88"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="89" id="Gmd-dq-DV4"/>
+                        <constraint firstAttribute="width" constant="80" id="XeO-Qh-h3r"/>
+                        <constraint firstAttribute="width" constant="80" id="r6a-bT-IL5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" red="0.83529411760000005" green="0.76470588240000004" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Gmd-dq-DV4"/>
+                            <exclude reference="XeO-Qh-h3r"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="71" y="526" width="80" height="89"/>
+                        <mask key="constraints">
+                            <include reference="Gmd-dq-DV4"/>
+                            <include reference="XeO-Qh-h3r"/>
+                            <exclude reference="r6a-bT-IL5"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="hoK-un-BM0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TK-o4-XgK">
+                    <rect key="frame" x="368" y="324" width="135" height="89"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="89" id="KUN-IT-oTk"/>
+                        <constraint firstAttribute="width" constant="135" id="am3-zX-nCe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
+                    <state key="normal" title="Forgot Password?">
+                        <color key="titleColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" red="0.83529411760000005" green="0.76470588240000004" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="130" y="592" width="151" height="89"/>
+                    </variation>
+                    <connections>
+                        <action selector="forgotPasswordButtonPressed:" destination="-1" eventType="touchUpInside" id="BdL-qb-ara"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.13333333333333333" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="leading" secondItem="qnw-d5-0wL" secondAttribute="trailing" constant="67" id="0zQ-Nb-tEu"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="top" secondItem="5TK-o4-XgK" secondAttribute="top" id="61r-gf-NXc"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="top" secondItem="qnw-d5-0wL" secondAttribute="top" id="9lU-dF-PDC"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BxR-c8-x4l"/>
+                <constraint firstItem="8FB-gF-jpl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1DD-du-rCQ"/>
+                <constraint firstItem="8FB-gF-jpl" firstAttribute="leading" secondItem="qnw-d5-0wL" secondAttribute="trailing" constant="47" id="33x-gf-sTH"/>
+                <constraint firstItem="8FB-gF-jpl" firstAttribute="centerX" secondItem="9ch-FD-ud6" secondAttribute="centerX" id="Agw-4P-bnJ"/>
                 <constraint firstItem="fsw-vm-Pfu" firstAttribute="leading" secondItem="9ch-FD-ud6" secondAttribute="leading" id="DDq-Lj-Lqe"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="baseline" secondItem="5TK-o4-XgK" secondAttribute="firstBaseline" id="E92-ih-KcW"/>
-                <constraint firstAttribute="bottom" secondItem="8FB-gF-jpl" secondAttribute="bottom" constant="187" id="Gk5-O3-9h9"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="centerX" secondItem="9ch-FD-ud6" secondAttribute="centerX" id="Lf1-lt-xdA"/>
-                <constraint firstItem="fsw-vm-Pfu" firstAttribute="trailing" secondItem="5TK-o4-XgK" secondAttribute="trailing" id="MSM-th-OeF"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="top" secondItem="9ch-FD-ud6" secondAttribute="bottom" constant="9" id="PTk-L9-O5G"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="centerY" secondItem="qnw-d5-0wL" secondAttribute="centerY" id="RiB-bb-I8t"/>
+                <constraint firstAttribute="trailing" secondItem="5TK-o4-XgK" secondAttribute="trailing" constant="97" id="XCp-9j-IBI"/>
+                <constraint firstItem="qnw-d5-0wL" firstAttribute="top" secondItem="8FB-gF-jpl" secondAttribute="top" id="Xb2-Uj-3We"/>
+                <constraint firstItem="5TK-o4-XgK" firstAttribute="top" secondItem="8FB-gF-jpl" secondAttribute="top" id="YBi-Tl-GMO"/>
+                <constraint firstItem="qnw-d5-0wL" firstAttribute="top" secondItem="9ch-FD-ud6" secondAttribute="bottom" constant="9" id="ZdD-ye-c8m"/>
                 <constraint firstItem="fsw-vm-Pfu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="dTR-8o-DL0"/>
-                <constraint firstItem="fsw-vm-Pfu" firstAttribute="leading" secondItem="qnw-d5-0wL" secondAttribute="leading" id="egx-HL-FXf"/>
-                <constraint firstItem="8FB-gF-jpl" firstAttribute="firstBaseline" secondItem="5TK-o4-XgK" secondAttribute="baseline" id="iZM-QM-kKh"/>
+                <constraint firstItem="5TK-o4-XgK" firstAttribute="leading" secondItem="8FB-gF-jpl" secondAttribute="trailing" constant="33" id="h7O-NT-7YC"/>
+                <constraint firstAttribute="bottom" secondItem="5TK-o4-XgK" secondAttribute="bottom" constant="187" id="ifa-QB-nvg"/>
+                <constraint firstItem="5TK-o4-XgK" firstAttribute="leading" secondItem="qnw-d5-0wL" secondAttribute="trailing" constant="4" id="kav-Sy-u8O"/>
                 <constraint firstItem="9ch-FD-ud6" firstAttribute="top" secondItem="fsw-vm-Pfu" secondAttribute="bottom" constant="8" symbolic="YES" id="mYs-Ra-AIh"/>
-                <constraint firstItem="5TK-o4-XgK" firstAttribute="leading" secondItem="8FB-gF-jpl" secondAttribute="trailing" constant="67" id="wSr-G3-tX6"/>
+                <constraint firstItem="qnw-d5-0wL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="p8T-ua-iZL"/>
+                <constraint firstItem="5TK-o4-XgK" firstAttribute="top" secondItem="9ch-FD-ud6" secondAttribute="bottom" constant="9" id="unt-2y-bfs"/>
+                <constraint firstItem="qnw-d5-0wL" firstAttribute="centerY" secondItem="5TK-o4-XgK" secondAttribute="centerY" id="w2s-ds-1Ty"/>
                 <constraint firstItem="fsw-vm-Pfu" firstAttribute="trailing" secondItem="9ch-FD-ud6" secondAttribute="trailing" id="zHu-tS-DOm"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ZdD-ye-c8m"/>
+                    <exclude reference="p8T-ua-iZL"/>
+                    <exclude reference="kav-Sy-u8O"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <exclude reference="Xb2-Uj-3We"/>
+                    <include reference="ZdD-ye-c8m"/>
+                    <include reference="p8T-ua-iZL"/>
+                    <exclude reference="w2s-ds-1Ty"/>
+                    <exclude reference="33x-gf-sTH"/>
+                    <include reference="kav-Sy-u8O"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="818" y="304"/>
         </view>
     </objects>

@@ -58,8 +58,10 @@
 
 - (void)registrationButtonClicked {
     
-    [FirebaseNetworkController createUserWithEmail:self.emailTextField.text andPassword:self.passwordTextField.text];
-    [self.navigationController pushViewController:[RegisterViewController new] animated:YES];
+    [FirebaseNetworkController createUserWithEmail:self.emailTextField.text andPassword:self.passwordTextField.text completion:^{
+            [self.navigationController pushViewController:[RegisterViewController new] animated:YES];
+    }];
+
     
 }
 /*

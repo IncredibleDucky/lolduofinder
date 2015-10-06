@@ -38,6 +38,7 @@
         sharedInstance.denied = [NSMutableArray new];
         sharedInstance.pendingMatches = [NSMutableArray new];
         sharedInstance.cards = [NSMutableArray new];
+        sharedInstance.isLoggedIn == NO;
 //Instantiate Shared Instance Properties
     });
     return sharedInstance;

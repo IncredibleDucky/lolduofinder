@@ -36,10 +36,10 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 @synthesize summonerCards; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
 
-- (id)initWithFrame:(CGRect)frame
+- (void)awakeFromNib
 {
-    self = [super initWithFrame:frame];
-    if (self) {
+  
+
         [super layoutSubviews];
         
 
@@ -50,9 +50,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
         [self loadCards];
-        
-    }
-    return self;
+  
 }
 
 //%%% sets up the extra buttons on the screen
@@ -85,7 +83,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 // to get rid of it (eg: if you are building cards from data from the internet)
 -(DraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
+    DraggableView *draggableView = [[DraggableView alloc] init];
   
     Summoner *newSummoner = [SummonerController sharedInstance].cards[index];
     

@@ -20,7 +20,7 @@
 @property (nonatomic, strong, readonly) NSArray *denied;
 @property (nonatomic, strong, readonly) NSArray *pendingMatches;
 @property (strong, nonatomic, readonly) NSArray *cards;
-
+@property (nonatomic) BOOL isLoggedIn;
 
 
 @property (strong, nonatomic) Summoner *summoner;

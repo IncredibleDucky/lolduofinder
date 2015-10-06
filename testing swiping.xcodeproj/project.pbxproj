@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F332F3F63A006800A0039F0 /* libPods-testing swiping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A9B80CCABE669EF938C88B /* libPods-testing swiping.a */; };
-		936AAAD71B8DC10F00435669 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936AAAD61B8DC10F00435669 /* LoginViewController.m */; };
+		933EA5321BC3132F0005BA04 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933EA5311BC3132F0005BA04 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		939E334A1B9789C200B31781 /* UserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939E33491B9789C200B31781 /* UserController.m */; };
 		939E334D1B97979700B31781 /* FirebaseNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939E334C1B97979700B31781 /* FirebaseNetworkController.m */; };
 		939E334F1B97990100B31781 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939E334E1B97990100B31781 /* Security.framework */; };
@@ -26,6 +26,7 @@
 		93CAC2541B8FBACE0028482E /* Friz Quadrata Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93CAC2531B8FB9F50028482E /* Friz Quadrata Regular.ttf */; };
 		93CAC2571B8FC6450028482E /* AppearanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC2561B8FC6450028482E /* AppearanceController.m */; };
 		93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC2591B8FE97F0028482E /* LOLLabel.m */; };
+		93E226441BC2E7080090E2EC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E226431BC2E7080090E2EC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		93E782B71B94F117007E2DD8 /* UserCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E782B61B94F117007E2DD8 /* UserCreationViewController.m */; };
 		93FD491C1B8D24F50047BAA4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FD491B1B8D24F50047BAA4 /* CoreData.framework */; };
 		93FD49221B8D28780047BAA4 /* Summoner.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FD49211B8D28780047BAA4 /* Summoner.m */; };
@@ -61,8 +62,7 @@
 /* Begin PBXFileReference section */
 		2C38CEB15FB9E561CDAF3425 /* Pods-testing swiping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing swiping.release.xcconfig"; path = "Pods/Target Support Files/Pods-testing swiping/Pods-testing swiping.release.xcconfig"; sourceTree = "<group>"; };
 		576300475D25C95CF9230D19 /* Pods-testing swiping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing swiping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testing swiping/Pods-testing swiping.debug.xcconfig"; sourceTree = "<group>"; };
-		936AAAD51B8DC10F00435669 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		936AAAD61B8DC10F00435669 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		933EA5311BC3132F0005BA04 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		939E33481B9789C200B31781 /* UserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserController.h; sourceTree = "<group>"; };
 		939E33491B9789C200B31781 /* UserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserController.m; sourceTree = "<group>"; };
 		939E334B1B97979700B31781 /* FirebaseNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseNetworkController.h; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 		93CAC2561B8FC6450028482E /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceController.m; sourceTree = "<group>"; };
 		93CAC2581B8FE97F0028482E /* LOLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLLabel.h; sourceTree = "<group>"; };
 		93CAC2591B8FE97F0028482E /* LOLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLLabel.m; sourceTree = "<group>"; };
+		93E226421BC2E7080090E2EC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		93E226431BC2E7080090E2EC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		93E782B51B94F117007E2DD8 /* UserCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCreationViewController.h; sourceTree = "<group>"; };
 		93E782B61B94F117007E2DD8 /* UserCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCreationViewController.m; sourceTree = "<group>"; };
 		93FD491B1B8D24F50047BAA4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -219,6 +221,7 @@
 		99B7AE8C192D50D500C1B49C = {
 			isa = PBXGroup;
 			children = (
+				933EA5311BC3132F0005BA04 /* Launch Screen.storyboard */,
 				99B7AE9E192D50D500C1B49C /* testing swiping */,
 				99B7AEBD192D50D500C1B49C /* testing swipingTests */,
 				99B7AE97192D50D500C1B49C /* Frameworks */,
@@ -259,9 +262,9 @@
 				93E782B61B94F117007E2DD8 /* UserCreationViewController.m */,
 				93CAC2501B8FA3EE0028482E /* WelcomeViewController.h */,
 				93CAC2511B8FA3EE0028482E /* WelcomeViewController.m */,
+				93E226421BC2E7080090E2EC /* LoginViewController.h */,
+				93E226431BC2E7080090E2EC /* LoginViewController.m */,
 				99B7AEAA192D50D500C1B49C /* Main.storyboard */,
-				936AAAD51B8DC10F00435669 /* LoginViewController.h */,
-				936AAAD61B8DC10F00435669 /* LoginViewController.m */,
 				93B15ECC1B8DC7D300B75784 /* RegisterViewController.h */,
 				93B15ECD1B8DC7D300B75784 /* RegisterViewController.m */,
 				93B15ECF1B8DCB4900B75784 /* MessagesViewController.h */,
@@ -397,6 +400,7 @@
 				99B7AEB1192D50D500C1B49C /* Images.xcassets in Resources */,
 				99B7AEA3192D50D500C1B49C /* InfoPlist.strings in Resources */,
 				99B7AEAC192D50D500C1B49C /* Main.storyboard in Resources */,
+				933EA5321BC3132F0005BA04 /* Launch Screen.storyboard in Resources */,
 				93CAC2541B8FBACE0028482E /* Friz Quadrata Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +461,7 @@
 				99B7AED2192E914500C1B49C /* OverlayView.m in Sources */,
 				939E33521B979B3E00B31781 /* KeychainItemWrapper.m in Sources */,
 				93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */,
+				93E226441BC2E7080090E2EC /* LoginViewController.m in Sources */,
 				93CAC24C1B8F76130028482E /* VerifyRegistrationViewController.m in Sources */,
 				93B15ED41B8DCB6400B75784 /* MenuViewController.m in Sources */,
 				93B2DCF31BB8FC1200A82C64 /* SummonerTableViewCell.m in Sources */,
@@ -466,7 +471,6 @@
 				99B7AECF192D513800C1B49C /* DraggableView.m in Sources */,
 				93CAC24F1B8F9D800028482E /* FixedSummonerProfileView.m in Sources */,
 				93B2DCF61BB9216200A82C64 /* FirechatViewController.m in Sources */,
-				936AAAD71B8DC10F00435669 /* LoginViewController.m in Sources */,
 				93B15ECE1B8DC7D300B75784 /* RegisterViewController.m in Sources */,
 				93CAC2521B8FA3EE0028482E /* WelcomeViewController.m in Sources */,
 				99B7AEA5192D50D500C1B49C /* main.m in Sources */,

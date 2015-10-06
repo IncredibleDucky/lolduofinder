@@ -17,10 +17,9 @@
 #import "MenuViewController.h"
 
 @interface DragCardsViewController ()
-
-@property (strong, nonatomic) UIButton *menuButton;
-@property (strong, nonatomic) UIButton *messageButton;
-
+@property (strong, nonatomic) IBOutlet DraggableViewBackground *draggableViewBackground;
+@property (weak, nonatomic) IBOutlet DraggableView *draggableView;
+@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
 
 @end
 
@@ -28,42 +27,17 @@
 
 - (void)viewDidLoad
 {
-
+    
     [super viewDidLoad];
-    DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
-    
 
-    
-    [self.view addSubview:draggableBackground];
     [self.navigationItem setHidesBackButton:YES animated:YES];
-    
-    self.menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 18, 22, 15)];
-    [self.menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
-    
-    self.messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 18, 18, 18)];
-    [self.messageButton setImage:[UIImage imageNamed:@"messageButton"] forState:UIControlStateNormal];
-    
-    [self.messageButton addTarget:self action:@selector(messageButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.menuButton addTarget:self action:@selector(menuButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.navigationController.navigationBar addSubview:self.menuButton];
-    [self.navigationController.navigationBar addSubview:self.messageButton];
-    
-//    [FirebaseNetworkController updateUsersSummoner];
-    
-    self.view.backgroundColor = [UIColor grayColor];
-    
-
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [self.navigationController.navigationBar addSubview:self.menuButton];
-    [self.navigationController.navigationBar addSubview:self.messageButton];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
-    [self.menuButton removeFromSuperview];
-    [self.messageButton removeFromSuperview];
     
 }
 
@@ -91,6 +65,13 @@
 
 
 }
+- (IBAction)menuButtonPressed:(id)sender {
+}
 
+- (IBAction)messageButtonPressed:(id)sender {
+}
+- (IBAction)handlePanGestureRecognizer:(id)sender {
+    [self.draggableView beingDragged:sender];
+}
 
 @end

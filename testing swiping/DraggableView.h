@@ -65,5 +65,6 @@
 
 -(void)leftClickAction;
 -(void)rightClickAction;
+-(void)beingDragged:(UIPanGestureRecognizer *)gestureRecognizer;
 
 @end

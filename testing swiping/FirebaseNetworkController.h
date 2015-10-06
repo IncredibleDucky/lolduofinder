@@ -13,7 +13,7 @@
 @interface FirebaseNetworkController : NSObject
 
 
-+ (void)createUserWithEmail:(NSString *)email andPassword:(NSString *)password;
++ (void)createUserWithEmail:(NSString *)email andPassword:(NSString *)password completion:(void (^)(void))completion;
 
 + (void)loginWithUserName:(NSString *)username password:(NSString *)password completion:(void (^)(void))completion;
 

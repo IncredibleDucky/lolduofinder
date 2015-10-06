@@ -157,6 +157,10 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
     cell.textLabel.text = chatMessage[@"text"];
     cell.detailTextLabel.text = chatMessage[@"name"];
     
+    if([cell.detailTextLabel.text isEqualToString:self.name]) {
+        
+    }
+    
     return cell;
 }
 

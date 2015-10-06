@@ -16,22 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [AppearanceController initializeAppearanceDefaults];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor darkGrayColor];
-    
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
-    
-    NSArray *fontFamilies = [UIFont familyNames];
-    
-    for (int i = 0; i < [fontFamilies count]; i++) {
-        NSString *fontFamily = [fontFamilies objectAtIndex: i];
-        NSArray *fontNames = [UIFont fontNamesForFamilyName:fontFamily];
-        NSLog(@"%@ : %@", fontFamily, fontNames);
-    }
-//
-    [self.window makeKeyAndVisible];
+
     // Override point for customization after application launch.
     return YES;
 }

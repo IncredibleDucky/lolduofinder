@@ -17,7 +17,8 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
 
 @implementation FirebaseNetworkController
 
-+ (void)createUserWithEmail:(NSString *)email andPassword:(NSString *)password {
++ (void)createUserWithEmail:(NSString *)email andPassword:(NSString *)password completion:(void (^)(void))completion{
+
     
     Firebase *ref = [[Firebase alloc] initWithUrl:rootURL];
     [ref childByAppendingPath:@"users"];
@@ -29,14 +30,13 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
             NSString *uid = [result objectForKey:@"uid"];
             NSLog(@"Successfully created user account with uid: %@", uid);
         }
+        completion();
     }];
     
 }
 
 + (void)loginWithUserName:(NSString *)username password:(NSString *)password completion:(void (^)(void))completion{
     Firebase *ref = [[Firebase alloc] initWithUrl:rootURL];
-    
-    if(ref.authData.uid) {
         
     [ref authUser:username password:password withCompletionBlock:^(NSError *error, FAuthData *authData) {
         if(error ) {
@@ -57,7 +57,7 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
        
         }
     }];
-    }
+    
 }
 
 + (void)loadUsersSummonerWithCompletion:(void (^)(void))completion {
@@ -329,7 +329,7 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
         }
         BOOL isPending = false;
         
-        if(![pendingMatches isEqual:[NSNull null]]) {
+        if(![pendingMatches isEqualToArray:@[]]) {
             for (int i = 0; i < pendingMatches.count; i++) {
                 if([pendingMatches[i] isEqualToString:dataReference.authData.uid]) {
                     isPending = true;
@@ -359,7 +359,6 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
                     Firebase *removePendingRef = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/users/%@/pendingMatches/%@", rootURL, [SummonerController sharedInstance].queried[0], dataReference.authData.uid]];
             [removePendingRef setValue:[NSNull null]];
             
- 
         }
         else {
             NSMutableArray *pendingMatches = [NSMutableArray arrayWithArray:[SummonerController sharedInstance].pendingMatches];
@@ -372,6 +371,8 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
             Firebase *potentialRef = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/users/%@/potentialMatches/%@", rootURL, [SummonerController sharedInstance].queried[0], dataReference.authData.uid]];
             [potentialRef setValue:@"potential"];
         }
+        completion();
+
     }];
     
 }

@@ -19,6 +19,10 @@
 #import "SummonerController.h"
 #import "FirebaseNetworkController.h"
 
+@interface DraggableView ()
+
+
+@end
 @implementation DraggableView {
     CGFloat xFromCenter;
     CGFloat yFromCenter;
@@ -37,9 +41,9 @@
 @synthesize leaguePointsLabel;
 @synthesize overlayView;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         [self setupView];
         
@@ -89,168 +93,7 @@
         [self addSubview:lossesLabel];
         [self addSubview:tierDivisionLabel];
         [self addSubview:leaguePointsLabel];
-//
-//        [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-//        [summonerLeagueIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
-//        [tierDivisionLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-//        [summonerName setTranslatesAutoresizingMaskIntoConstraints:NO];
-//        [summonerProfileIcon setTranslatesAutoresizingMaskIntoConstraints:NO];
-//
-//
-//        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:summonerLeagueIcon
-//                                                                      attribute:NSLayoutAttributeLeading
-//                                                                      relatedBy:NSLayoutRelationEqual
-//                                                                         toItem:self
-//                                                                      attribute:NSLayoutAttributeLeading
-//                                                                     multiplier:1
-//                                                                       constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerLeagueIcon
-//                                                  attribute:NSLayoutAttributeTop
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:self
-//                                                  attribute:NSLayoutAttributeTop
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerLeagueIcon
-//                                                  attribute:NSLayoutAttributeTrailing
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:self
-//                                                  attribute:NSLayoutAttributeTrailing
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-        
-//       NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
-//                                                                      attribute:NSLayoutAttributeLeading
-//                                                                      relatedBy:NSLayoutRelationEqual
-//                                                                         toItem:self
-//                                                                      attribute:NSLayoutAttributeLeading
-//                                                                     multiplier:1
-//                                                                       constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
-//                                                  attribute:NSLayoutAttributeTop
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:summonerLeagueIcon
-//                                                  attribute:NSLayoutAttributeTop
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
-//                                                  attribute:NSLayoutAttributeTrailing
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:self
-//                                                  attribute:NSLayoutAttributeTrailing
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:tierDivisionLabel
-//                                                  attribute:NSLayoutAttributeBottom
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:summonerName
-//                                                  attribute:NSLayoutAttributeTop
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
-//                                                  attribute:NSLayoutAttributeLeading
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeTrailing
-//                                                 multiplier:1
-//                                                   constant:5];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
-//                                                  attribute:NSLayoutAttributeTop
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:tierDivisionLabel
-//                                                  attribute:NSLayoutAttributeBottom
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
-//                                                  attribute:NSLayoutAttributeTrailing
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:self
-//                                                  attribute:NSLayoutAttributeTrailing
-//                                                 multiplier:1
-//                                                   constant:10];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerName
-//                                                  attribute:NSLayoutAttributeBottom
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:self
-//                                                  attribute:NSLayoutAttributeBottom
-//                                                 multiplier:1
-//                                                   constant:-10];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeLeading
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:self
-//                                                  attribute:NSLayoutAttributeLeading
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeTop
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:tierDivisionLabel
-//                                                  attribute:NSLayoutAttributeBottom
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeCenterY
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:summonerName
-//                                                  attribute:NSLayoutAttributeCenterY
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeBottom
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:self
-//                                                  attribute:NSLayoutAttributeBottom
-//                                                 multiplier:1
-//                                                   constant:-10];
-//        [self addConstraint:constraint];
-//
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeWidth
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeHeight
-//                                                 multiplier:1
-//                                                   constant:50];
-//        [self addConstraint:constraint];
-//        
-//        constraint = [NSLayoutConstraint constraintWithItem:summonerProfileIcon
-//                                                  attribute:NSLayoutAttributeHeight
-//                                                  relatedBy:NSLayoutRelationEqual
-//                                                     toItem:summonerName
-//                                                  attribute:NSLayoutAttributeHeight
-//                                                 multiplier:1
-//                                                   constant:0];
-//        [self addConstraint:constraint];
-//        
-//
+
         
         overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         overlayView.alpha = 0;
@@ -423,7 +266,7 @@
                      }completion:^(BOOL complete){
                          [self removeFromSuperview];
                      }];
-    
+
     [delegate cardSwipedLeft:self];
     
     NSLog(@"NO");
