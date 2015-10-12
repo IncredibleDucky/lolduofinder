@@ -12,7 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		186717DA14EF6380F77E3E7B9636084E /* Pods-testing swiping-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testing swiping-resources.sh"; sourceTree = "<group>"; };
+		186717DA14EF6380F77E3E7B9636084E /* Pods-testing swiping-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; lineEnding = 0; path = "Pods-testing swiping-resources.sh"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		727CD44A1109D3DFC6A00369877DC867 /* libPods-testing swiping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testing swiping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB257624D023F737DDDE7B2108B00E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9CDC659E32DB8ED4F18B066C52D0292D /* Pods-testing swiping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testing swiping.debug.xcconfig"; sourceTree = "<group>"; };

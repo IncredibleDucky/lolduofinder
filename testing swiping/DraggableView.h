@@ -46,20 +46,26 @@
 
 @interface DraggableView : UIView
 
+@property (nonatomic, weak) IBOutlet UILabel *rankLabel;
+@property (nonatomic, weak) IBOutlet UILabel *winLossLabel;
+@property (nonatomic, weak) IBOutlet UILabel *leaguePointsLabel;
+@property (nonatomic, weak) IBOutlet UILabel *preferredRoleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *useVoiceCommsLabel;
+@property (nonatomic, weak) IBOutlet UILabel *hotStreakLabel;
+@property (nonatomic, weak) IBOutlet UILabel *summonerNameLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *splashArtImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *profileIconImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *rolePreferredImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *hotStreakCheckBoxImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *commsCheckBoxImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *rankIconImageView;
+
+
 @property (weak) id <DraggableViewDelegate> delegate;
 
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic)CGPoint originalPoint;
 @property (nonatomic,strong)OverlayView* overlayView;
-
-//Summoner Info on each card
-@property (nonatomic, strong)LOLLabel* summonerName;
-@property (nonatomic, strong)UIImageView* summonerLeagueIcon;
-@property (nonatomic, strong)UIImageView* summonerProfileIcon;
-@property (nonatomic, strong)LOLLabel* winsLossesLabel;
-@property (nonatomic, strong)LOLLabel* lossesLabel;
-@property (nonatomic, strong)LOLLabel* tierDivisionLabel;
-@property (nonatomic, strong)LOLLabel* leaguePointsLabel;
 
 -(void)updateWithSummoner:(Summoner *)summoner;
 

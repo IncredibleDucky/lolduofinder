@@ -16,6 +16,8 @@
 #import "FirebaseNetworkController.h"
 #import "DragCardsViewController.h"
 
+static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
+
 
 @interface VerifyRegistrationViewController ()
 
@@ -114,7 +116,9 @@
             //Create Account?
             NSLog(@"You're Verified!!!");
             
-            [FirebaseNetworkController updateUsersSummoner];
+
+            
+            [FirebaseNetworkController updateUsersSummoner:self.summoner withUid:self.summoner.uid];
             
             [self.navigationController pushViewController:[DragCardsViewController new] animated:YES];
             

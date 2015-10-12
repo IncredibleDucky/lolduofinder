@@ -14,7 +14,7 @@
 #import "SummonerController.h"
 #import "Summoner.h"
 #import "MessagesViewController.h"
-#import "MenuViewController.h"
+#import "UserSettingsViewController.h"
 
 @interface DragCardsViewController ()
 @property (strong, nonatomic) IBOutlet DraggableViewBackground *draggableViewBackground;
@@ -53,7 +53,7 @@
 
 -(void)menuButtonPressed{
     
-    MenuViewController *menuViewController = [[MenuViewController alloc] init];
+    UserSettingsViewController *menuViewController = [[UserSettingsViewController alloc] init];
     
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.25];

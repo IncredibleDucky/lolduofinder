@@ -21,11 +21,11 @@
 
 + (void)grabPotentialMatches;
 
-+ (void)loadSummonersWithUIDWithCompletion:(void (^)(void))completion;
++ (void)loadQueriedSummonersWithUIDWithCompletion:(void (^)(void))completion;
 
 + (void)loadMatchesSummonersWithUIDAtIndex:(NSInteger)index WithCompletion:(void (^)(void))completion;
 
-+ (void)updateUsersSummoner;
++ (void)updateUsersSummoner:(Summoner *)summoner withUid:(NSString *)uid;
 
 + (void)queryForMatchesWithCompletion:(void (^)(void))completion;
 

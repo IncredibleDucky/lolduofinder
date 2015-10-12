@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F332F3F63A006800A0039F0 /* libPods-testing swiping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A9B80CCABE669EF938C88B /* libPods-testing swiping.a */; };
+		93315F4C1BC60F9C00E95CB4 /* ChampionSkinDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 93315F4B1BC60F9C00E95CB4 /* ChampionSkinDictionary.m */; settings = {ASSET_TAGS = (); }; };
 		933EA5321BC3132F0005BA04 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933EA5311BC3132F0005BA04 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		939E334A1B9789C200B31781 /* UserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939E33491B9789C200B31781 /* UserController.m */; };
 		939E334D1B97979700B31781 /* FirebaseNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939E334C1B97979700B31781 /* FirebaseNetworkController.m */; };
@@ -16,7 +17,7 @@
 		93AE6E961B7D3B8800E896C1 /* LeagueNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE6E951B7D3B8800E896C1 /* LeagueNetworkController.m */; };
 		93B15ECE1B8DC7D300B75784 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ECD1B8DC7D300B75784 /* RegisterViewController.m */; };
 		93B15ED11B8DCB4900B75784 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ED01B8DCB4900B75784 /* MessagesViewController.m */; };
-		93B15ED41B8DCB6400B75784 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ED31B8DCB6400B75784 /* MenuViewController.m */; };
+		93B15ED41B8DCB6400B75784 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B15ED31B8DCB6400B75784 /* UserSettingsViewController.m */; };
 		93B2DCF31BB8FC1200A82C64 /* SummonerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B2DCF21BB8FC1200A82C64 /* SummonerTableViewCell.m */; };
 		93B2DCF61BB9216200A82C64 /* FirechatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B2DCF51BB9216200A82C64 /* FirechatViewController.m */; };
 		93BCB41E1B7E4EA3000D6630 /* SummonerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BCB41D1B7E4EA3000D6630 /* SummonerController.m */; };
@@ -62,6 +63,8 @@
 /* Begin PBXFileReference section */
 		2C38CEB15FB9E561CDAF3425 /* Pods-testing swiping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing swiping.release.xcconfig"; path = "Pods/Target Support Files/Pods-testing swiping/Pods-testing swiping.release.xcconfig"; sourceTree = "<group>"; };
 		576300475D25C95CF9230D19 /* Pods-testing swiping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing swiping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testing swiping/Pods-testing swiping.debug.xcconfig"; sourceTree = "<group>"; };
+		93315F4A1BC60F9C00E95CB4 /* ChampionSkinDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChampionSkinDictionary.h; sourceTree = "<group>"; };
+		93315F4B1BC60F9C00E95CB4 /* ChampionSkinDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChampionSkinDictionary.m; sourceTree = "<group>"; };
 		933EA5311BC3132F0005BA04 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		939E33481B9789C200B31781 /* UserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserController.h; sourceTree = "<group>"; };
 		939E33491B9789C200B31781 /* UserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserController.m; sourceTree = "<group>"; };
@@ -76,8 +79,8 @@
 		93B15ECD1B8DC7D300B75784 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		93B15ECF1B8DCB4900B75784 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		93B15ED01B8DCB4900B75784 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
-		93B15ED21B8DCB6400B75784 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = ../MenuViewController.h; sourceTree = "<group>"; };
-		93B15ED31B8DCB6400B75784 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ../MenuViewController.m; sourceTree = "<group>"; };
+		93B15ED21B8DCB6400B75784 /* UserSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSettingsViewController.h; path = ../UserSettingsViewController.h; sourceTree = "<group>"; };
+		93B15ED31B8DCB6400B75784 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSettingsViewController.m; path = ../UserSettingsViewController.m; sourceTree = "<group>"; };
 		93B2DCF11BB8FC1200A82C64 /* SummonerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonerTableViewCell.h; sourceTree = "<group>"; };
 		93B2DCF21BB8FC1200A82C64 /* SummonerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummonerTableViewCell.m; sourceTree = "<group>"; };
 		93B2DCF41BB9216200A82C64 /* FirechatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirechatViewController.h; sourceTree = "<group>"; };
@@ -265,14 +268,16 @@
 				93E226421BC2E7080090E2EC /* LoginViewController.h */,
 				93E226431BC2E7080090E2EC /* LoginViewController.m */,
 				99B7AEAA192D50D500C1B49C /* Main.storyboard */,
+				93315F4A1BC60F9C00E95CB4 /* ChampionSkinDictionary.h */,
+				93315F4B1BC60F9C00E95CB4 /* ChampionSkinDictionary.m */,
 				93B15ECC1B8DC7D300B75784 /* RegisterViewController.h */,
 				93B15ECD1B8DC7D300B75784 /* RegisterViewController.m */,
 				93B15ECF1B8DCB4900B75784 /* MessagesViewController.h */,
 				93B15ED01B8DCB4900B75784 /* MessagesViewController.m */,
 				93B2DCF11BB8FC1200A82C64 /* SummonerTableViewCell.h */,
 				93B2DCF21BB8FC1200A82C64 /* SummonerTableViewCell.m */,
-				93B15ED21B8DCB6400B75784 /* MenuViewController.h */,
-				93B15ED31B8DCB6400B75784 /* MenuViewController.m */,
+				93B15ED21B8DCB6400B75784 /* UserSettingsViewController.h */,
+				93B15ED31B8DCB6400B75784 /* UserSettingsViewController.m */,
 				93CAC24A1B8F76130028482E /* VerifyRegistrationViewController.h */,
 				93CAC24B1B8F76130028482E /* VerifyRegistrationViewController.m */,
 				99B7AEAD192D50D500C1B49C /* DragCardsViewController.h */,
@@ -463,13 +468,14 @@
 				93CAC25A1B8FE97F0028482E /* LOLLabel.m in Sources */,
 				93E226441BC2E7080090E2EC /* LoginViewController.m in Sources */,
 				93CAC24C1B8F76130028482E /* VerifyRegistrationViewController.m in Sources */,
-				93B15ED41B8DCB6400B75784 /* MenuViewController.m in Sources */,
+				93B15ED41B8DCB6400B75784 /* UserSettingsViewController.m in Sources */,
 				93B2DCF31BB8FC1200A82C64 /* SummonerTableViewCell.m in Sources */,
 				99B7AEA9192D50D500C1B49C /* AppDelegate.m in Sources */,
 				93AE6E961B7D3B8800E896C1 /* LeagueNetworkController.m in Sources */,
 				93B15ED11B8DCB4900B75784 /* MessagesViewController.m in Sources */,
 				99B7AECF192D513800C1B49C /* DraggableView.m in Sources */,
 				93CAC24F1B8F9D800028482E /* FixedSummonerProfileView.m in Sources */,
+				93315F4C1BC60F9C00E95CB4 /* ChampionSkinDictionary.m in Sources */,
 				93B2DCF61BB9216200A82C64 /* FirechatViewController.m in Sources */,
 				93B15ECE1B8DC7D300B75784 /* RegisterViewController.m in Sources */,
 				93CAC2521B8FA3EE0028482E /* WelcomeViewController.m in Sources */,

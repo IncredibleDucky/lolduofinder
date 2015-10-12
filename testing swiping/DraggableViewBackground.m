@@ -36,10 +36,10 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 @synthesize summonerCards; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
 
-- (void)awakeFromNib
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
   
-
+    self = [super initWithCoder:aDecoder];
+    if (self) {
         [super layoutSubviews];
         
 
@@ -50,7 +50,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
         [self loadCards];
-  
+    }
+    return  self;
 }
 
 //%%% sets up the extra buttons on the screen
@@ -90,6 +91,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [draggableView updateWithSummoner:newSummoner];
     
     draggableView.delegate = self;
+    
     return draggableView;
 }
 
@@ -97,14 +99,14 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 -(void)loadCards
 {
     
-      [FirebaseNetworkController loadSummonersWithUIDWithCompletion:^{
+      [FirebaseNetworkController loadQueriedSummonersWithUIDWithCompletion:^{
 
     if([summonerCards count] > 0) {
         NSInteger numLoadedCardsCap =(([summonerCards count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[summonerCards count]);
         //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
         
         //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
-        for (int i = 0; i<[summonerCards count]; i++) {
+        for (NSInteger i = 0; i<[summonerCards count]; i++) {
             DraggableView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
             
@@ -147,13 +149,12 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }
 }
 
-#warning include own action here!
+
 //%%% action called when the card goes to the right.
-// This should be customized with your own action
+
 -(void)cardSwipedRight:(UIView *)card
 {
-    //do whatever you want with the card that was swiped
-    //    DraggableView *c = (DraggableView *)card;
+
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     

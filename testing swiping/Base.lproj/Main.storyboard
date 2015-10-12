@@ -15,6 +15,8 @@
             <string>FrizQuadrataFont</string>
             <string>FrizQuadrataFont</string>
             <string>FrizQuadrataFont</string>
+            <string>FrizQuadrataFont</string>
+            <string>FrizQuadrataFont</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -138,90 +140,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPn-dS-RBc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPn-dS-RBc">
                                 <rect key="frame" x="20" y="227" width="280" height="21"/>
                                 <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yesButton" translatesAutoresizingMaskIntoConstraints="NO" id="e85-mc-GVP">
+                                <rect key="frame" x="185" y="467" width="60" height="57"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noButton" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-Y6-c7n">
+                                <rect key="frame" x="82" y="467" width="60" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0WE-uD-6zf"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoU-D3-OqY" customClass="DraggableView">
                                 <rect key="frame" x="20" y="72" width="280" height="396"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Draven_2" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-iE-Gye">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="75"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile icon" translatesAutoresizingMaskIntoConstraints="NO" id="TBE-e4-2jd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile icon" translatesAutoresizingMaskIntoConstraints="NO" id="TBE-e4-2jd">
                                         <rect key="frame" x="8" y="175" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="pll-ES-7OE"/>
-                                            <constraint firstAttribute="height" constant="44" id="qjQ-OZ-bbi"/>
-                                        </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="platinum_iv" translatesAutoresizingMaskIntoConstraints="NO" id="3Cn-Eg-Oe2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="platinum_iv" translatesAutoresizingMaskIntoConstraints="NO" id="3Cn-Eg-Oe2">
                                         <rect key="frame" x="113" y="83" width="55" height="55"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="gSQ-U3-HSj"/>
-                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-tt-6OX">
-                                        <rect key="frame" x="8" y="270" width="160" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="wxD-Vy-fOp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wins: 823  Losses: 814" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hST-Ot-IH1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wins: 823  Losses: 814" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hST-Ot-IH1">
                                         <rect key="frame" x="8" y="227" width="264" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="Ulb-EQ-G1L"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="14"/>
                                         <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="IncredibleDucky" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzc-lt-Qq7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IncredibleDucky" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzc-lt-Qq7">
                                         <rect key="frame" x="50" y="175" width="181" height="44"/>
                                         <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="17"/>
                                         <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Platinum IV - 19 LP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuZ-Gl-fvH">
-                                        <rect key="frame" x="41" y="146" width="199" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="WiR-Gy-WMC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="17"/>
-                                        <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Preferrred Role: Adc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s04-VW-1SA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preferrred Role: Adc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s04-VW-1SA">
                                         <rect key="frame" x="8" y="267" width="223" height="21"/>
                                         <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="17"/>
                                         <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="adc" translatesAutoresizingMaskIntoConstraints="NO" id="1TX-9U-aRn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="adc" translatesAutoresizingMaskIntoConstraints="NO" id="1TX-9U-aRn">
                                         <rect key="frame" x="228" y="256" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="bhU-71-o9x"/>
-                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hot Streak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDF-li-irt">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hot Streak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDF-li-irt">
                                         <rect key="frame" x="64" y="312" width="153" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="153" id="3Kl-1S-q7c"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="14"/>
                                         <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="uncheckedCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="7Nc-U3-to6">
-                                        <rect key="frame" x="242" y="308" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="hfR-t3-9ej"/>
-                                        </constraints>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uncheckedCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="7Nc-U3-to6">
+                                        <rect key="frame" x="242" y="303" width="30" height="30"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uses Voice Comms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1W-jt-KsU">
                                         <rect key="frame" x="61" y="350" width="158" height="21"/>
@@ -229,81 +200,65 @@
                                         <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedCheckbox" translatesAutoresizingMaskIntoConstraints="NO" id="LrS-zK-Cma">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkedCheckbox" translatesAutoresizingMaskIntoConstraints="NO" id="LrS-zK-Cma">
                                         <rect key="frame" x="242" y="346" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="qEU-1m-ovi"/>
-                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19 LP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IK-Ur-CBI">
+                                        <rect key="frame" x="119" y="165" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="14"/>
+                                        <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Platinum IV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuZ-Gl-fvH">
+                                        <rect key="frame" x="41" y="146" width="199" height="21"/>
+                                        <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="17"/>
+                                        <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Draven_2" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-iE-Gye">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="75"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.1333333333" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="7Nc-U3-to6" firstAttribute="trailing" secondItem="IDF-li-irt" secondAttribute="trailing" constant="55" id="2Kn-qd-JcE"/>
-                                    <constraint firstItem="JuZ-Gl-fvH" firstAttribute="leading" secondItem="YoU-D3-OqY" secondAttribute="leading" constant="67" id="56N-Fb-VOJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="LrS-zK-Cma" secondAttribute="bottom" constant="20" id="5a5-oF-Oi1"/>
-                                    <constraint firstItem="JuZ-Gl-fvH" firstAttribute="top" secondItem="3Cn-Eg-Oe2" secondAttribute="bottom" constant="8" symbolic="YES" id="7kA-nk-gv2"/>
-                                    <constraint firstItem="LrS-zK-Cma" firstAttribute="leading" secondItem="7Nc-U3-to6" secondAttribute="leading" id="8rX-2I-nZm"/>
-                                    <constraint firstItem="fOZ-tt-6OX" firstAttribute="top" secondItem="hST-Ot-IH1" secondAttribute="bottom" constant="22" id="AlF-gd-5F5"/>
-                                    <constraint firstItem="hST-Ot-IH1" firstAttribute="top" secondItem="dzc-lt-Qq7" secondAttribute="bottom" constant="8" symbolic="YES" id="B4M-bu-SxT"/>
-                                    <constraint firstItem="Yrt-iE-Gye" firstAttribute="top" secondItem="YoU-D3-OqY" secondAttribute="top" id="CKK-IA-uWM"/>
-                                    <constraint firstItem="dzc-lt-Qq7" firstAttribute="leading" secondItem="YoU-D3-OqY" secondAttribute="leading" constant="50" id="D1r-mT-DGS"/>
-                                    <constraint firstItem="IDF-li-irt" firstAttribute="trailing" secondItem="1TX-9U-aRn" secondAttribute="trailing" constant="-55" id="FiD-Zv-KNi"/>
-                                    <constraint firstItem="s04-VW-1SA" firstAttribute="leading" secondItem="fOZ-tt-6OX" secondAttribute="leading" id="JmI-BJ-qAK"/>
-                                    <constraint firstItem="7Nc-U3-to6" firstAttribute="top" secondItem="1TX-9U-aRn" secondAttribute="bottom" constant="8" symbolic="YES" id="Lbp-3H-kT5"/>
-                                    <constraint firstItem="IDF-li-irt" firstAttribute="top" secondItem="s04-VW-1SA" secondAttribute="bottom" constant="24" id="NUS-A5-3cr"/>
-                                    <constraint firstItem="LrS-zK-Cma" firstAttribute="top" secondItem="IDF-li-irt" secondAttribute="bottom" constant="13" id="Q5K-vo-3Ja"/>
-                                    <constraint firstItem="IDF-li-irt" firstAttribute="top" secondItem="fOZ-tt-6OX" secondAttribute="bottom" constant="21" id="QDe-tu-cN1"/>
-                                    <constraint firstItem="hST-Ot-IH1" firstAttribute="top" secondItem="TBE-e4-2jd" secondAttribute="bottom" constant="8" symbolic="YES" id="SBU-Mu-kMU"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yrt-iE-Gye" secondAttribute="trailing" id="WRI-vK-0yQ"/>
-                                    <constraint firstItem="7Nc-U3-to6" firstAttribute="trailing" secondItem="LrS-zK-Cma" secondAttribute="trailing" id="XuL-xC-xeW"/>
-                                    <constraint firstItem="s04-VW-1SA" firstAttribute="top" secondItem="hST-Ot-IH1" secondAttribute="bottom" constant="19" id="Yai-QH-ZNg"/>
-                                    <constraint firstItem="1TX-9U-aRn" firstAttribute="top" secondItem="hST-Ot-IH1" secondAttribute="bottom" constant="8" symbolic="YES" id="bMq-sl-RK1"/>
-                                    <constraint firstItem="s04-VW-1SA" firstAttribute="leading" secondItem="hST-Ot-IH1" secondAttribute="leading" id="dfd-pc-qnB"/>
-                                    <constraint firstItem="hST-Ot-IH1" firstAttribute="trailing" secondItem="1TX-9U-aRn" secondAttribute="trailing" id="elk-Ff-C3Z"/>
-                                    <constraint firstItem="dzc-lt-Qq7" firstAttribute="top" secondItem="JuZ-Gl-fvH" secondAttribute="bottom" constant="8" symbolic="YES" id="fA1-FM-INA"/>
-                                    <constraint firstItem="fOZ-tt-6OX" firstAttribute="trailing" secondItem="3Cn-Eg-Oe2" secondAttribute="trailing" id="gaq-C0-UZC"/>
-                                    <constraint firstItem="TBE-e4-2jd" firstAttribute="leading" secondItem="YoU-D3-OqY" secondAttribute="leadingMargin" id="kdY-6r-CiU"/>
-                                    <constraint firstItem="1TX-9U-aRn" firstAttribute="leading" secondItem="fOZ-tt-6OX" secondAttribute="trailing" constant="60" id="nwe-7a-Wp2"/>
-                                    <constraint firstItem="LrS-zK-Cma" firstAttribute="top" secondItem="7Nc-U3-to6" secondAttribute="bottom" constant="8" symbolic="YES" id="pL6-eS-rx6"/>
-                                    <constraint firstItem="s04-VW-1SA" firstAttribute="centerY" secondItem="1TX-9U-aRn" secondAttribute="centerY" id="pfb-zo-wu7"/>
-                                    <constraint firstItem="dzc-lt-Qq7" firstAttribute="trailing" secondItem="s04-VW-1SA" secondAttribute="trailing" id="rEE-z9-sOc"/>
-                                    <constraint firstItem="Yrt-iE-Gye" firstAttribute="leading" secondItem="YoU-D3-OqY" secondAttribute="leading" id="rNF-1V-hlz"/>
-                                    <constraint firstItem="3Cn-Eg-Oe2" firstAttribute="top" secondItem="Yrt-iE-Gye" secondAttribute="bottom" constant="8" symbolic="YES" id="tQv-9E-nvd"/>
-                                    <constraint firstItem="dzc-lt-Qq7" firstAttribute="centerX" secondItem="hST-Ot-IH1" secondAttribute="centerX" id="uBR-cu-7fG"/>
-                                    <constraint firstItem="3Cn-Eg-Oe2" firstAttribute="centerX" secondItem="JuZ-Gl-fvH" secondAttribute="centerX" id="uGK-Mq-RU4"/>
-                                    <constraint firstItem="TBE-e4-2jd" firstAttribute="leading" secondItem="hST-Ot-IH1" secondAttribute="leading" id="x1l-AU-RWd"/>
-                                    <constraint firstItem="TBE-e4-2jd" firstAttribute="top" secondItem="dzc-lt-Qq7" secondAttribute="top" id="xGR-8L-hrU"/>
-                                    <constraint firstItem="dzc-lt-Qq7" firstAttribute="centerX" secondItem="JuZ-Gl-fvH" secondAttribute="centerX" id="xyR-pU-9HX"/>
-                                    <constraint firstItem="Yrt-iE-Gye" firstAttribute="centerX" secondItem="3Cn-Eg-Oe2" secondAttribute="centerX" id="y6Z-uG-yk6"/>
-                                </constraints>
                                 <connections>
+                                    <outlet property="commsCheckBoxImageView" destination="LrS-zK-Cma" id="Xzr-HM-t3B"/>
+                                    <outlet property="hotStreakCheckBoxImageView" destination="7Nc-U3-to6" id="3i5-xl-D4L"/>
+                                    <outlet property="hotStreakLabel" destination="IDF-li-irt" id="ssl-Y9-BeT"/>
+                                    <outlet property="leaguePointsLabel" destination="0IK-Ur-CBI" id="HNp-ek-h7w"/>
+                                    <outlet property="preferredRoleLabel" destination="s04-VW-1SA" id="86q-X9-046"/>
+                                    <outlet property="profileIconImageView" destination="TBE-e4-2jd" id="hym-83-lea"/>
+                                    <outlet property="rankIconImageView" destination="3Cn-Eg-Oe2" id="nuI-DG-aZ6"/>
+                                    <outlet property="rankLabel" destination="JuZ-Gl-fvH" id="6nd-Ai-RHj"/>
+                                    <outlet property="rolePreferredImageView" destination="7Nc-U3-to6" id="uuM-iE-OLs"/>
+                                    <outlet property="splashArtImageView" destination="Yrt-iE-Gye" id="KZ1-Hu-FYg"/>
+                                    <outlet property="summonerNameLabel" destination="dzc-lt-Qq7" id="diE-E8-0eR"/>
+                                    <outlet property="useVoiceCommsLabel" destination="u1W-jt-KsU" id="8ag-t9-sqz"/>
+                                    <outlet property="winLossLabel" destination="hST-Ot-IH1" id="mR2-ze-TBF"/>
                                     <outletCollection property="gestureRecognizers" destination="ZgC-oc-37e" appends="YES" id="Rkp-hN-yLS"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noButton" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-Y6-c7n">
-                                <rect key="frame" x="40" y="476" width="91" height="81"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yesButton" translatesAutoresizingMaskIntoConstraints="NO" id="e85-mc-GVP">
-                                <rect key="frame" x="177" y="476" width="89" height="81"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YoU-D3-OqY" firstAttribute="leading" secondItem="rPn-dS-RBc" secondAttribute="leading" id="6Va-Q7-mQG"/>
-                            <constraint firstItem="YoU-D3-OqY" firstAttribute="top" secondItem="Rcp-0p-UkI" secondAttribute="bottom" constant="8" symbolic="YES" id="6hV-5o-7U1"/>
-                            <constraint firstItem="2Mz-08-uRX" firstAttribute="top" secondItem="rPn-dS-RBc" secondAttribute="bottom" constant="276" id="9g5-bj-hXN"/>
-                            <constraint firstItem="YoU-D3-OqY" firstAttribute="trailing" secondItem="rPn-dS-RBc" secondAttribute="trailing" id="Vkb-zB-mOm"/>
-                            <constraint firstItem="rPn-dS-RBc" firstAttribute="top" secondItem="Rcp-0p-UkI" secondAttribute="bottom" constant="163" id="eMU-2b-Bnp"/>
-                            <constraint firstItem="YoU-D3-OqY" firstAttribute="centerX" secondItem="TPk-nv-xbB" secondAttribute="centerX" id="lYS-Or-IAu"/>
-                            <constraint firstItem="YoU-D3-OqY" firstAttribute="leading" secondItem="TPk-nv-xbB" secondAttribute="leadingMargin" constant="4" id="nmS-hP-xLK"/>
-                            <constraint firstItem="2Mz-08-uRX" firstAttribute="top" secondItem="YoU-D3-OqY" secondAttribute="bottom" constant="56" id="wxw-u6-YVq"/>
+                            <constraint firstItem="YoU-D3-OqY" firstAttribute="top" secondItem="Rcp-0p-UkI" secondAttribute="bottom" constant="8" symbolic="YES" id="BzK-x9-ZP7"/>
+                            <constraint firstItem="e85-mc-GVP" firstAttribute="top" secondItem="YoU-D3-OqY" secondAttribute="bottom" constant="8" symbolic="YES" id="CDg-S6-4lB"/>
+                            <constraint firstItem="fkz-Y6-c7n" firstAttribute="bottom" secondItem="2Mz-08-uRX" secondAttribute="top" id="Lf6-I8-acB"/>
+                            <constraint firstItem="fkz-Y6-c7n" firstAttribute="bottom" secondItem="e85-mc-GVP" secondAttribute="bottom" id="N4Q-ib-X6R"/>
+                            <constraint firstItem="fkz-Y6-c7n" firstAttribute="leading" secondItem="TPk-nv-xbB" secondAttribute="leadingMargin" constant="66" id="So9-B1-bxs"/>
+                            <constraint firstAttribute="bottom" secondItem="YoU-D3-OqY" secondAttribute="bottom" constant="100" id="THf-Vi-92a"/>
+                            <constraint firstItem="YoU-D3-OqY" firstAttribute="leading" secondItem="TPk-nv-xbB" secondAttribute="leadingMargin" constant="4" id="Tqj-Vd-oHp"/>
+                            <constraint firstItem="YoU-D3-OqY" firstAttribute="leading" secondItem="rPn-dS-RBc" secondAttribute="leading" id="cKn-WT-nvJ"/>
+                            <constraint firstItem="YoU-D3-OqY" firstAttribute="centerX" secondItem="TPk-nv-xbB" secondAttribute="centerX" id="e2U-Hs-HPL"/>
+                            <constraint firstItem="fkz-Y6-c7n" firstAttribute="top" secondItem="YoU-D3-OqY" secondAttribute="bottom" constant="8" symbolic="YES" id="gQh-7n-fOa"/>
+                            <constraint firstItem="e85-mc-GVP" firstAttribute="leading" secondItem="fkz-Y6-c7n" secondAttribute="trailing" constant="43" id="vZx-A2-9Rt"/>
+                            <constraint firstItem="YoU-D3-OqY" firstAttribute="trailing" secondItem="rPn-dS-RBc" secondAttribute="trailing" id="z2Z-eP-30h"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="LoLduoFinder" id="Cst-6L-ZCo">
-                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="VSR-jQ-YqJ">
+                        <barButtonItem key="leftBarButtonItem" image="Settings-25" id="VSR-jQ-YqJ">
                             <connections>
                                 <action selector="menuButtonPressed:" destination="4uS-hj-2pH" id="gsE-Rk-Vx0"/>
                                 <segue destination="IPe-T3-2GX" kind="push" id="GxM-4F-WoD"/>
@@ -323,12 +278,12 @@
                         <outlet property="panGestureRecognizer" destination="ZgC-oc-37e" id="Whm-FO-uVp"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3hg-uW-uEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="ZgC-oc-37e">
                     <connections>
                         <action selector="handlePanGestureRecognizer:" destination="4uS-hj-2pH" id="rwb-7v-vel"/>
                     </connections>
                 </panGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hg-uW-uEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="997"/>
         </scene>
@@ -350,10 +305,10 @@
             </objects>
             <point key="canvasLocation" x="419" y="305"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="hPA-1y-BKN">
             <objects>
-                <viewController id="IPe-T3-2GX" sceneMemberID="viewController">
+                <viewController id="IPe-T3-2GX" customClass="UserSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VvW-a8-BtB"/>
                         <viewControllerLayoutGuide type="bottom" id="pdh-T5-GTr"/>
@@ -361,20 +316,57 @@
                     <view key="view" contentMode="scaleToFill" id="jlm-ow-03P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-kW-hvP">
+                                <rect key="frame" x="178" y="106" width="122" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IPe-T3-2GX" id="pE8-ja-ARt"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlK-wh-BHd">
+                                <rect key="frame" x="20" y="72" width="150" height="26"/>
+                                <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
+                                <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G7-sj-idv">
+                                <rect key="frame" x="178" y="72" width="122" height="26"/>
+                                <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
+                                <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2Q-b7-tdN">
+                                <rect key="frame" x="20" y="106" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IPe-T3-2GX" id="IgQ-Hc-3vS"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.1333333333" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rPW-bL-b0H"/>
+                    <navigationItem key="navigationItem" title="Settings" id="r1d-Tm-xSS">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="jGc-Yo-kit"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="JfR-v4-6nt"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="championTextField" destination="E2Q-b7-tdN" id="QMA-Fh-NIc"/>
+                        <outlet property="skinTextField" destination="kSt-kW-hvP" id="vxG-YC-NES"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9a-Bs-4d4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="997"/>
+            <point key="canvasLocation" x="414" y="997"/>
         </scene>
     </scenes>
     <resources>
         <image name="Draven_2" width="1215" height="717"/>
+        <image name="Settings-25" width="25" height="25"/>
         <image name="adc" width="128" height="128"/>
         <image name="checkedCheckbox" width="50" height="50"/>
-        <image name="menuButton" width="46" height="29"/>
         <image name="messageButton" width="35" height="35"/>
         <image name="noButton" width="70" height="70"/>
         <image name="platinum_iv" width="200" height="200"/>

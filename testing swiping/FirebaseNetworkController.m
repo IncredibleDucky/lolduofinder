@@ -1,3 +1,4 @@
+
 //
 //  FirebaseNetworkController.m
 //  testing swiping
@@ -130,58 +131,21 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
     }];
 }
 
-+ (void)updateUsersSummoner {
++ (void)updateUsersSummoner:(Summoner *)summoner withUid:(NSString *)uid {
     
     Firebase *dataReference = [[Firebase alloc] initWithUrl:rootURL];
-    
-    Summoner *tempSummoner = [SummonerController sharedInstance].summoner;
     
     //Saves summoner data at <baseURL>/users/<uid>/summoner
     [[[[dataReference childByAppendingPath:@"users"] childByAppendingPath: dataReference.authData.uid] childByAppendingPath:@"summoner"]
-     setValue:[[SummonerController sharedInstance].summoner dictionaryRepresentation]];
+     setValue:[summoner dictionaryRepresentation]];
     
-    __block NSString *uid = dataReference.authData.uid;
-    
-    
-    __block NSMutableArray *array = [NSMutableArray new];
-    
-    Firebase *newRef = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/ranks/%@/%@/%@", rootURL, tempSummoner.rankedTier, tempSummoner.rankedDivision, dataReference.authData.uid]];
-    [newRef setValue:@{@"name" : tempSummoner.summonerName, @"dateLastUpdated" : [[NSDate date] description] }];
-    
-//    [newRef observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//        if(![snapshot.value isEqual:[NSNull null]]) {
-//            NSLog(@"%@", newRef);
-//            NSLog(@"%@", snapshot.value);
-//            array = snapshot.value;
-//        }
-//        BOOL alreadyExits = false;
-//        
-//        for(int i = 0; i < array.count; i++) {
-//            if([array[i] isEqualToString:uid]) {
-//                alreadyExits = true;
-//            }
-//            
-//        }
-//        if(alreadyExits == false) {
-//            [array addObject:uid];
-//            [newRef setValue:array];
-//        }
-//    }];
+    Firebase *newRef = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/ranks/%@/%@/%@", rootURL, summoner.rankedTier, summoner.rankedDivision, dataReference.authData.uid]];
+    [newRef setValue:@{@"name" : summoner.summonerName, @"dateLastUpdated" : [summoner.lastUpdatedDate description] }];
     
 }
 
-+ (void)updateAnotherSummonerWithUid:(NSString *)uid {
-    
-    Firebase *dataReference = [[Firebase alloc] initWithUrl:rootURL];
-    
-    
-# warning update shared instance with info from rito servers
-    [[[[dataReference childByAppendingPath:@"users"] childByAppendingPath: uid] childByAppendingPath: @"summoner"]
-     setValue:[[SummonerController sharedInstance].summoner dictionaryRepresentation]];//
-}
 
-
-+ (void)loadSummonersWithUIDWithCompletion:(void (^)(void))completion{
++ (void)loadQueriedSummonersWithUIDWithCompletion:(void (^)(void))completion{
     
     NSMutableArray *summoners = [NSMutableArray new];
     
@@ -228,7 +192,10 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
         
         NSArray *matches = [NSArray new];
         NSMutableArray *queried = [NSMutableArray new];
-        matches = [snapshot.value allKeys];
+        if(![snapshot.value isEqual: [NSNull null]]) {
+            
+        
+            matches = [snapshot.value allKeys];
         NSLog(@"%@", snapshot.value);
         NSLog(@"%@", matches);
         
@@ -295,20 +262,19 @@ static NSString *rootURL = @"https://lolduofinder.firebaseio.com";
             } else{
                 NSLog(@"No More Summs this rank");
             }
+            
+            
+            
         } else {
             NSLog(@"No more summoners this rank");
+        }
+        } else {
+            NSLog(@"No summs found at this rank");
+            [SummonerController sharedInstance].queried = @[];
         }
         completion();
     }];
 }
-
-+ (void)setPotentialMatch:(NSString *) matchUID{
-    
-    Firebase *dataReference = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/users/%@/potentialMatches", rootURL, matchUID]];
-    NSLog(@"%@", dataReference);
-    [dataReference setValue:dataReference.authData.uid];
-}
-
 
 
 + (void)logout {

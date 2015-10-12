@@ -32,75 +32,39 @@
 @synthesize delegate;
 
 @synthesize panGestureRecognizer;
-@synthesize summonerName;
-@synthesize summonerLeagueIcon;
-@synthesize summonerProfileIcon;
-@synthesize winsLossesLabel;
-@synthesize lossesLabel;
-@synthesize tierDivisionLabel;
-@synthesize leaguePointsLabel;
+
 @synthesize overlayView;
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self setupView];
+@synthesize summonerNameLabel;
+@synthesize rankLabel;
+@synthesize winLossLabel;
+@synthesize leaguePointsLabel;
+@synthesize preferredRoleLabel;
+@synthesize useVoiceCommsLabel;
+@synthesize hotStreakLabel;
+@synthesize splashArtImageView;
+@synthesize profileIconImageView;
+@synthesize rolePreferredImageView;
+@synthesize hotStreakCheckBoxImageView;
+@synthesize commsCheckBoxImageView;
+@synthesize rankIconImageView;
+
+- (void)awakeFromNib {
         
-#warning placeholder stuff, replace with card-specific information {
-        summonerName = [[LOLLabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 150, 200, 300, 25)];
-        [summonerName setTextAlignment:NSTextAlignmentCenter];
-        summonerName.textColor = [UIColor whiteColor];
-        
-        summonerLeagueIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - 40, 10, 80, 80)];
-        
-        summonerProfileIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 200, 25, 25)];
 
         
-         winsLossesLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(30, 250, 100, 25)];
-        [winsLossesLabel setTextAlignment:NSTextAlignmentCenter];
-        winsLossesLabel.textColor = [UIColor whiteColor];
-        
-         lossesLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(150, 250, 100, 25)];
-        [lossesLabel setTextAlignment:NSTextAlignmentCenter];
-        lossesLabel.textColor = [UIColor whiteColor];
-        
-         tierDivisionLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 100, 200, 40)];
-        [tierDivisionLabel setTextAlignment:NSTextAlignmentCenter];
-        tierDivisionLabel.textColor = [UIColor whiteColor];
-        
-         leaguePointsLabel = [[LOLLabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 100, 150, 200, 40)];
-        [leaguePointsLabel setTextAlignment:NSTextAlignmentCenter];
-        leaguePointsLabel.textColor = [UIColor whiteColor];
-        
-        self.backgroundColor = [UIColor lightGrayColor];
-        
-#warning placeholder stuff, replace with card-specific information }
-        
-        
-#pragma mark - autolayout
-        
+        [self setupView];
 
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
         [self addGestureRecognizer:panGestureRecognizer];
         
-        //Add all subviews to card.
-        [self addSubview:summonerName];
-        [self addSubview:summonerLeagueIcon];
-        [self addSubview:summonerProfileIcon];
-        [self addSubview:winsLossesLabel];
-        [self addSubview:lossesLabel];
-        [self addSubview:tierDivisionLabel];
-        [self addSubview:leaguePointsLabel];
-
-        
         overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         overlayView.alpha = 0;
     //    [self addSubview:self.information];
         [self addSubview:overlayView];
-    }
-    return self;
+
+
 }
 
 -(void)setupView
@@ -274,18 +238,11 @@
 
 -(void)updateWithSummoner:(Summoner *)summoner {
     
-    self.summonerName.text = summoner.summonerName; //%%% placeholder for card-specific information
-    self.winsLossesLabel.text = [NSString stringWithFormat:@"W: %@", summoner.rankedWins];
-    self.lossesLabel.text = [NSString stringWithFormat:@"L: %@", summoner.rankedLosses];
-    self.tierDivisionLabel.text = [NSString stringWithFormat:@"%@ %@", summoner.rankedTier, summoner.rankedDivision];
-    self.leaguePointsLabel.text = [NSString stringWithFormat:@"%@ LP", summoner.leaguePoints];
-    
-    
-    self.summonerLeagueIcon.image = [UIImage imageNamed:[summoner leagueSpecificImageNameForSummoner]];
+    self.summonerNameLabel.text = summoner.summonerName;
     
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/%ld.png", (long)[summoner.profileIconID integerValue]]]];
     
-    self.summonerProfileIcon.image = [UIImage imageWithData:imageData];
+    self.profileIconImageView.image = [UIImage imageWithData:imageData];
     
 }
 
