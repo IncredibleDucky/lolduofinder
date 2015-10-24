@@ -10,12 +10,11 @@
 #import "SummonerController.h"
 #import "ChampionSkinDictionary.h"
 #import "FirebaseNetworkController.h"
-@interface UserSettingsViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface UserSettingsViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *championTextField;
-@property (weak, nonatomic) IBOutlet UITextField *skinTextField;
+@property (strong, nonatomic) UIPickerView *pickerView;
 
-@property (strong, nonatomic) UITableView *tableView;
 @end
 
 @implementation UserSettingsViewController
@@ -23,10 +22,21 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    
+    self.pickerView = [[UIPickerView alloc] init];
+    self.pickerView.dataSource = self;
+    self.pickerView.delegate = self;
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    [toolbar setBarStyle:UIBarStyleDefault];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(resignPickerView:)];
+    doneButton.tintColor = [UIColor blackColor];
+    toolbar.items = @[doneButton];
+    
     self.championTextField.delegate = self;
+    self.championTextField.inputView = self.pickerView;
+    self.championTextField.inputAccessoryView = toolbar;
+    self.championTextField.text = [SummonerController sharedInstance].summoner.favoriteChampion;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,12 +44,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.tableView.frame = CGRectMake(0, 500, self.view.frame.size.width, self.view.frame.size.height - 500);
-    textField.inputView = self.tableView;
-    [self.view addSubview:self.tableView];
-    [textField reloadInputViews];
-}
 
 - (void)backButtonPressed{
     
@@ -61,18 +65,26 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[ChampionSkinDictionary championSkinDictionary] allKeys].count;
+-   (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-    cell.textLabel.text = [ChampionSkinDictionary championList][indexPath.row];
-    return cell;
-    
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [ChampionSkinDictionary championList].count;
 }
 
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [ChampionSkinDictionary championList][row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    [SummonerController sharedInstance].summoner.favoriteChampion = [ChampionSkinDictionary championList][row];
+    self.championTextField.text = [ChampionSkinDictionary championList][row];
+}
+
+- (void)resignPickerView:(id)sender{
+
+    [self.championTextField	resignFirstResponder];
+}
+                                   
 @end

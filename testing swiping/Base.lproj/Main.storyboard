@@ -16,7 +16,6 @@
             <string>FrizQuadrataFont</string>
             <string>FrizQuadrataFont</string>
             <string>FrizQuadrataFont</string>
-            <string>FrizQuadrataFont</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -146,16 +145,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yesButton" translatesAutoresizingMaskIntoConstraints="NO" id="e85-mc-GVP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="yesButton" translatesAutoresizingMaskIntoConstraints="NO" id="e85-mc-GVP">
                                 <rect key="frame" x="185" y="467" width="60" height="57"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noButton" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-Y6-c7n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="noButton" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-Y6-c7n">
                                 <rect key="frame" x="82" y="467" width="60" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="0WE-uD-6zf"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoU-D3-OqY" customClass="DraggableView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YoU-D3-OqY" customClass="DraggableView">
                                 <rect key="frame" x="20" y="72" width="280" height="396"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile icon" translatesAutoresizingMaskIntoConstraints="NO" id="TBE-e4-2jd">
@@ -185,12 +184,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="adc" translatesAutoresizingMaskIntoConstraints="NO" id="1TX-9U-aRn">
                                         <rect key="frame" x="228" y="256" width="44" height="44"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hot Streak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDF-li-irt">
-                                        <rect key="frame" x="64" y="312" width="153" height="21"/>
-                                        <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="14"/>
-                                        <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uncheckedCheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="7Nc-U3-to6">
                                         <rect key="frame" x="242" y="303" width="30" height="30"/>
                                     </imageView>
@@ -215,9 +208,21 @@
                                         <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Draven_2" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-iE-Gye">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="75"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HgP-bY-fUe">
+                                        <rect key="frame" x="8" y="8" width="50" height="50"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-EO-kMo">
+                                        <rect key="frame" x="222" y="8" width="50" height="50"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EZN-nq-TYj">
+                                        <rect key="frame" x="115" y="8" width="50" height="50"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hot Streak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDF-li-irt">
+                                        <rect key="frame" x="64" y="312" width="153" height="21"/>
+                                        <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="14"/>
+                                        <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.1333333333" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,7 +237,6 @@
                                     <outlet property="rankIconImageView" destination="3Cn-Eg-Oe2" id="nuI-DG-aZ6"/>
                                     <outlet property="rankLabel" destination="JuZ-Gl-fvH" id="6nd-Ai-RHj"/>
                                     <outlet property="rolePreferredImageView" destination="7Nc-U3-to6" id="uuM-iE-OLs"/>
-                                    <outlet property="splashArtImageView" destination="Yrt-iE-Gye" id="KZ1-Hu-FYg"/>
                                     <outlet property="summonerNameLabel" destination="dzc-lt-Qq7" id="diE-E8-0eR"/>
                                     <outlet property="useVoiceCommsLabel" destination="u1W-jt-KsU" id="8ag-t9-sqz"/>
                                     <outlet property="winLossLabel" destination="hST-Ot-IH1" id="mR2-ze-TBF"/>
@@ -246,11 +250,7 @@
                             <constraint firstItem="e85-mc-GVP" firstAttribute="top" secondItem="YoU-D3-OqY" secondAttribute="bottom" constant="8" symbolic="YES" id="CDg-S6-4lB"/>
                             <constraint firstItem="fkz-Y6-c7n" firstAttribute="bottom" secondItem="2Mz-08-uRX" secondAttribute="top" id="Lf6-I8-acB"/>
                             <constraint firstItem="fkz-Y6-c7n" firstAttribute="bottom" secondItem="e85-mc-GVP" secondAttribute="bottom" id="N4Q-ib-X6R"/>
-                            <constraint firstItem="fkz-Y6-c7n" firstAttribute="leading" secondItem="TPk-nv-xbB" secondAttribute="leadingMargin" constant="66" id="So9-B1-bxs"/>
-                            <constraint firstAttribute="bottom" secondItem="YoU-D3-OqY" secondAttribute="bottom" constant="100" id="THf-Vi-92a"/>
-                            <constraint firstItem="YoU-D3-OqY" firstAttribute="leading" secondItem="TPk-nv-xbB" secondAttribute="leadingMargin" constant="4" id="Tqj-Vd-oHp"/>
                             <constraint firstItem="YoU-D3-OqY" firstAttribute="leading" secondItem="rPn-dS-RBc" secondAttribute="leading" id="cKn-WT-nvJ"/>
-                            <constraint firstItem="YoU-D3-OqY" firstAttribute="centerX" secondItem="TPk-nv-xbB" secondAttribute="centerX" id="e2U-Hs-HPL"/>
                             <constraint firstItem="fkz-Y6-c7n" firstAttribute="top" secondItem="YoU-D3-OqY" secondAttribute="bottom" constant="8" symbolic="YES" id="gQh-7n-fOa"/>
                             <constraint firstItem="e85-mc-GVP" firstAttribute="leading" secondItem="fkz-Y6-c7n" secondAttribute="trailing" constant="43" id="vZx-A2-9Rt"/>
                             <constraint firstItem="YoU-D3-OqY" firstAttribute="trailing" secondItem="rPn-dS-RBc" secondAttribute="trailing" id="z2Z-eP-30h"/>
@@ -317,28 +317,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-kW-hvP">
-                                <rect key="frame" x="178" y="106" width="122" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="IPe-T3-2GX" id="pE8-ja-ARt"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlK-wh-BHd">
-                                <rect key="frame" x="20" y="72" width="150" height="26"/>
-                                <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
-                                <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G7-sj-idv">
-                                <rect key="frame" x="178" y="72" width="122" height="26"/>
+                                <rect key="frame" x="20" y="72" width="280" height="26"/>
                                 <fontDescription key="fontDescription" name="FrizQuadrataFont" family="Friz Quadrata" pointSize="15"/>
                                 <color key="textColor" red="0.71372549019999998" green="0.59215686270000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2Q-b7-tdN">
-                                <rect key="frame" x="20" y="106" width="150" height="30"/>
+                                <rect key="frame" x="20" y="106" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -354,7 +340,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="championTextField" destination="E2Q-b7-tdN" id="QMA-Fh-NIc"/>
-                        <outlet property="skinTextField" destination="kSt-kW-hvP" id="vxG-YC-NES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9a-Bs-4d4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,7 +348,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Draven_2" width="1215" height="717"/>
         <image name="Settings-25" width="25" height="25"/>
         <image name="adc" width="128" height="128"/>
         <image name="checkedCheckbox" width="50" height="50"/>
